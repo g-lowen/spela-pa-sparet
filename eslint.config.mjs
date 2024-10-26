@@ -1,6 +1,7 @@
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import prettier from "eslint-config-prettier";
 
 const recommendedConfig = [...tseslint.configs.recommended];
 
@@ -23,5 +24,6 @@ export default [
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   { languageOptions: { globals: globals.browser } },
   ...recommendedConfig,
+  prettier,
   pluginReact.configs.flat.recommended
 ];
