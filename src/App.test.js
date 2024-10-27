@@ -3,6 +3,6 @@ import App from "./App";
 
 test("renders learn react link", () => {
   render(<App />);
-  const element = screen.getByText(/Hello World/i);
-  expect(element).toBeInTheDocument();
+  const buttonElement = screen.getByRole("button", { name: /🌙/i });
+  expect(buttonElement).toBeInTheDocument();
 });
