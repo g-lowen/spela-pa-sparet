@@ -1,6 +1,6 @@
 import { Gambler, Match } from "../types";
 
-export const matches: Match[] = [
+export const MATCHES: Match[] = [
   {
     date: "1 november",
     matchType: "group",
@@ -127,9 +127,9 @@ export const matches: Match[] = [
     teams: null,
     winner: null
   }
-];
+] as const;
 
-export const gamblers: Gambler[] = [
+export const GAMBLERS: Gambler[] = [
   {
     name: "Elin",
     bets: [
@@ -630,4 +630,4 @@ export const gamblers: Gambler[] = [
       }
     ]
   }
-];
+] as const;
