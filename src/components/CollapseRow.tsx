@@ -64,13 +64,15 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export const CollapseRow = ({
   betResult,
   index,
-  isLargeScreen
+  isLargeScreen,
+  onClick
 }: {
   betResult: ReturnType<typeof createRowData>["betResults"][0];
   index: number;
   isLargeScreen: boolean;
+  onClick: () => void;
 }) => (
-  <StyledTableRow key={betResult.date}>
+  <StyledTableRow key={betResult.date} onClick={onClick}>
     <TableCell component="th" scope="row">
       {index + 1}
     </TableCell>

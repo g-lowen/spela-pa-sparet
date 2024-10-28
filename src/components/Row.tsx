@@ -15,17 +15,24 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 export function Row(props: { row: ReturnType<typeof createRowData> }) {
   const { row } = props;
   const isLargeScreen = useMediaQuery("(min-width:600px)");
-
   const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    const selection = window.getSelection();
+    if (selection?.type === "Range") {
+      return;
+    }
+    setOpen((prev) => !prev);
+  };
 
   return (
     <>
-      <TableRow>
+      <TableRow onClick={handleClick}>
         <TableCell>
           <IconButton
             aria-label="expand row"
             size="small"
-            onClick={() => setOpen(!open)}
+            onClick={handleClick}
           >
             {open ? "🔼" : "🔽"}
           </IconButton>
@@ -41,7 +48,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box>
+            <Box sx={{ margin: "6px" }}>
               <Table size="small" aria-label="bets" stickyHeader>
                 <TableHead>
                   <TableRow>
@@ -72,6 +79,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
                         betResult={betResult}
                         index={index}
                         isLargeScreen={isLargeScreen}
+                        onClick={handleClick}
                       />
                     );
                   })}

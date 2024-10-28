@@ -28,11 +28,11 @@ export default function DataTable() {
           ...(isSmallScreen && {
             ["& .MuiTableCell-root"]: {
               padding: "6px 2px",
-              ["&:last-of-type"]: {
-                paddingRight: "6px"
+              ["&:last-of-type:not(:first-of-type)"]: {
+                padding: "6px"
               },
-              ["&:first-of-type"]: {
-                padding: "6px 0px"
+              ["&:first-of-type:not(:first-child:has(.MuiCollapse-root))"]: {
+                padding: "6px"
               }
             }
           })
