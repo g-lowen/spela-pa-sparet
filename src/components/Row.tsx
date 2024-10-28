@@ -42,7 +42,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box>
-              <Table size="small" aria-label="purchases">
+              <Table size="small" aria-label="bets" stickyHeader>
                 <TableHead>
                   <TableRow>
                     <TableCell>Avsnitt</TableCell>
@@ -52,8 +52,16 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
                         <TableCell>Matchtyp</TableCell>
                       </>
                     ) : null}
-                    <TableCell>1:a klass</TableCell>
-                    <TableCell>Dressinen</TableCell>
+                    <TableCell
+                      sx={{ textAlign: `${!isLargeScreen && "center"}` }}
+                    >
+                      1:a klass
+                    </TableCell>
+                    <TableCell
+                      sx={{ textAlign: `${!isLargeScreen && "center"}` }}
+                    >
+                      Dressinen
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

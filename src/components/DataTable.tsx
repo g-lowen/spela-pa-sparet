@@ -38,7 +38,7 @@ export default function DataTable() {
           })
         }}
       >
-        <Table aria-label="collapsible table" size="small" stickyHeader>
+        <Table aria-label="collapsible table" size="small">
           <TableHead>
             <TableRow>
               <TableCell>
