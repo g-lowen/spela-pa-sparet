@@ -4,6 +4,7 @@ import { createRowData } from "./helpers/createRowData";
 import { styled } from "@mui/material/styles";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  cursor: "pointer",
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover
   }

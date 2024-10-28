@@ -7,7 +7,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { createRowData } from "./helpers/createRowData";
 import { CollapseRow } from "./CollapseRow";
-import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -27,16 +26,8 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
 
   return (
     <>
-      <TableRow onClick={handleClick}>
-        <TableCell>
-          <IconButton
-            aria-label="expand row"
-            size="small"
-            onClick={handleClick}
-          >
-            {open ? "🔼" : "🔽"}
-          </IconButton>
-        </TableCell>
+      <TableRow onClick={handleClick} sx={{ cursor: "pointer" }}>
+        <TableCell>{open ? "🔼" : "🔽"}</TableCell>
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
