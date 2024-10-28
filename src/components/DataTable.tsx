@@ -10,16 +10,34 @@ import { MOCK_GAMBLERS } from "../constants/mockConstants";
 import { createRowData } from "./helpers/createRowData";
 import { Row } from "./Row";
 
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 import { useColorScheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function DataTable() {
   const { mode, setMode } = useColorScheme();
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: "100vh" }}>
+      <TableContainer
+        sx={{
+          maxHeight: "100vh",
+          ...(isSmallScreen && {
+            ["& .MuiTableCell-root"]: {
+              padding: "6px 2px",
+              ["&:last-of-type"]: {
+                paddingRight: "6px"
+              },
+              ["&:first-of-type"]: {
+                padding: "6px 0px"
+              }
+            }
+          })
+        }}
+      >
         <Table aria-label="collapsible table" size="small" stickyHeader>
           <TableHead>
             <TableRow>

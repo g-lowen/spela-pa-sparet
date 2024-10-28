@@ -63,36 +63,40 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 export const CollapseRow = ({
   betResult,
-  index
+  index,
+  isLargeScreen
 }: {
   betResult: ReturnType<typeof createRowData>["betResults"][0];
   index: number;
-}) => {
-  return (
-    <StyledTableRow key={betResult.date}>
-      <TableCell component="th" scope="row">
-        {index + 1}
-      </TableCell>
-      <TableCell>{betResult.date}</TableCell>
-      <TableCell>{betResult.matchType}</TableCell>
-      {index < 12 ? (
-        <StyledTableCell className={betResult.firstClass?.className}>
-          {betResult.firstClass?.team}
-        </StyledTableCell>
-      ) : (
-        <StyledTableCell
-          className={betResult.firstClass?.className}
-          colSpan={2}
-          sx={{ textAlign: "center" }}
-        >
-          {betResult.firstClass?.team}
-        </StyledTableCell>
-      )}
-      {index < 12 ? (
-        <StyledTableCell className={betResult.trolley?.className}>
-          {betResult.trolley?.team}
-        </StyledTableCell>
-      ) : null}
-    </StyledTableRow>
-  );
-};
+  isLargeScreen: boolean;
+}) => (
+  <StyledTableRow key={betResult.date}>
+    <TableCell component="th" scope="row">
+      {index + 1}
+    </TableCell>
+    {isLargeScreen ? (
+      <>
+        <TableCell>{betResult.date}</TableCell>
+        <TableCell>{betResult.matchType}</TableCell>
+      </>
+    ) : null}
+    {index < 12 ? (
+      <StyledTableCell className={betResult.firstClass?.className}>
+        {betResult.firstClass?.team}
+      </StyledTableCell>
+    ) : (
+      <StyledTableCell
+        className={betResult.firstClass?.className}
+        colSpan={2}
+        sx={{ textAlign: "center" }}
+      >
+        {betResult.firstClass?.team}
+      </StyledTableCell>
+    )}
+    {index < 12 ? (
+      <StyledTableCell className={betResult.trolley?.className}>
+        {betResult.trolley?.team}
+      </StyledTableCell>
+    ) : null}
+  </StyledTableRow>
+);

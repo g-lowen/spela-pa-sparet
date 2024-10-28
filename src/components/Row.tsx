@@ -10,11 +10,11 @@ import { CollapseRow } from "./CollapseRow";
 import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-// TODO: Make media queries at 600px
 export function Row(props: { row: ReturnType<typeof createRowData> }) {
   const { row } = props;
+  const isLargeScreen = useMediaQuery("(min-width:600px)");
 
   const [open, setOpen] = useState(false);
 
@@ -41,16 +41,17 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                Bets
-              </Typography>
+            <Box>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
                     <TableCell>Avsnitt</TableCell>
-                    <TableCell>Datum</TableCell>
-                    <TableCell>Matchtyp</TableCell>
+                    {isLargeScreen ? (
+                      <>
+                        <TableCell>Datum</TableCell>
+                        <TableCell>Matchtyp</TableCell>
+                      </>
+                    ) : null}
                     <TableCell>1:a klass</TableCell>
                     <TableCell>Dressinen</TableCell>
                   </TableRow>
@@ -62,6 +63,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
                         key={betResult.date}
                         betResult={betResult}
                         index={index}
+                        isLargeScreen={isLargeScreen}
                       />
                     );
                   })}
