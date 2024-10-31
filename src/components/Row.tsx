@@ -27,7 +27,21 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
   return (
     <>
       <TableRow onClick={handleClick} sx={{ cursor: "pointer" }}>
-        <TableCell>{open ? "🔼" : "🔽"}</TableCell>
+        <TableCell sx={{ maxWidth: "100px" }}>
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                transform: open ? "rotate(90deg)" : "rotate(0deg)",
+                transition: "transform 0.3s ease-in-out"
+              }}
+            >
+              ▶️
+            </Box>
+          </Box>
+        </TableCell>
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>

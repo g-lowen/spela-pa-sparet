@@ -41,7 +41,7 @@ export default function DataTable() {
         <Table aria-label="collapsible table" size="small">
           <TableHead>
             <TableRow>
-              <TableCell>
+              <TableCell sx={{ width: "80px" }}>
                 <ToggleButtonGroup
                   size="small"
                   exclusive
