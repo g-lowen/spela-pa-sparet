@@ -8,8 +8,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Ebba Kleberg von Sydow", "Anders Tegnell"],
       ["Hector Apelgren", "Peter Apelgren"]
     ],
-    winner: null
-    // winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+    // winner: null
+    winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
   },
   {
     date: "8 november",
@@ -122,24 +122,24 @@ export const MOCK_MATCHES: Match[] = [
     // winner: ["Farah Abadi", "Johan Glans"]
   },
   {
-    date: "24 januari",
+    date: "24/31 januari",
     matchType: "semifinal",
     teams: [
       ["Hanna Dorsin", "Emma Molin"],
       ["Messiah Hallberg", "Sara Wimmercranz"]
     ],
-    winner: null
-    // winner: ["Messiah Hallberg", "Sara Wimmercranz"]
+    // winner: null
+    winner: ["Messiah Hallberg", "Sara Wimmercranz"]
   },
   {
-    date: "31 januari",
+    date: "24/31 januari",
     matchType: "semifinal",
     teams: [
       ["Anders Eldeman", "Christoffer Nyqvist"],
       ["Hector Apelgren", "Peter Apelgren"]
     ],
-    // winner: null
-    winner: ["Hector Apelgren", "Peter Apelgren"]
+    winner: null
+    // winner: ["Hector Apelgren", "Peter Apelgren"]
   },
   {
     date: "7 februari",

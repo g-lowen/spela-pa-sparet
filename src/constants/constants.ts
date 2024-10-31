@@ -110,13 +110,13 @@ export const MATCHES: Match[] = [
     winner: null
   },
   {
-    date: "24 januari",
+    date: "24/31 januari",
     matchType: "semifinal",
     teams: null,
     winner: null
   },
   {
-    date: "31 januari",
+    date: "24/31 januari",
     matchType: "semifinal",
     teams: null,
     winner: null

@@ -11,7 +11,8 @@ const MATCH_TYPE_TRANSLATION = {
 
 export function createRowData(gambler: Gambler) {
   const { bets, name } = gambler;
-  const { matchesPlayed, wins, losses, points } = getResults(bets);
+  const { matchesPlayed, wins, losses, points, correctIndex1, correctIndex2 } =
+    getResults(bets);
 
   return {
     name,
@@ -19,14 +20,25 @@ export function createRowData(gambler: Gambler) {
     wins,
     losses,
     points,
-    betResults: MATCHES.map((match, index) => {
+    betResults: MOCK_MATCHES.map((match, index) => {
       const { date, matchType } = match;
       const bet = bets[index];
       const { firstClass, trolley } = getTeams(match, bet);
+      const semifinalIsPlayed =
+        MOCK_MATCHES[12]?.winner !== null || MOCK_MATCHES[13]?.winner !== null;
 
       return {
         date,
-        firstClass,
+        firstClass:
+          matchType === "semifinal" && semifinalIsPlayed
+            ? {
+                ...firstClass,
+                className:
+                  index === correctIndex1 || index === correctIndex2
+                    ? "correct"
+                    : "wrong"
+              }
+            : firstClass,
         trolley,
         matchType: MATCH_TYPE_TRANSLATION[matchType]
       };
@@ -35,17 +47,18 @@ export function createRowData(gambler: Gambler) {
 }
 
 function getResults(bets: Gambler["bets"]) {
-  const semifinalsResults = getSemifinalsResults(bets);
+  const { semifinalsResults, correctIndex1, correctIndex2 } =
+    getSemifinalsResults(bets);
   const results = bets
     .map((bet, index) => {
-      const match = MATCHES[index];
+      const match = MOCK_MATCHES[index];
 
       if (!match || match.winner === null || bet.winner === null) {
         return null;
       }
 
       if (match.matchType === "semifinal") {
-        return null;
+        return 0;
       }
 
       if (match.winner.toString() === bet.winner.toString()) {
@@ -66,32 +79,40 @@ function getResults(bets: Gambler["bets"]) {
   const losses = results.filter((result) => result === 0).length;
   const points = results.reduce((sum, result) => sum + result, 0);
 
-  return { matchesPlayed, wins, losses, points };
+  return { matchesPlayed, wins, losses, points, correctIndex1, correctIndex2 };
 }
 
-function getSemifinalsResults(bets: Gambler["bets"]) {
-  const semifinalOneWinner = MATCHES[12]?.winner?.toString();
-  const semifinalTwoWinner = MATCHES[13]?.winner?.toString();
+function getSemifinalsResults(bets: Gambler["bets"]): {
+  semifinalsResults: number[];
+  correctIndex1: number | null;
+  correctIndex2: number | null;
+} {
+  const semifinalOneWinner = MOCK_MATCHES[12]?.winner?.toString();
+  const semifinalTwoWinner = MOCK_MATCHES[13]?.winner?.toString();
   const betSemifinalOneWinner = bets[12]?.winner?.toString();
   const betSemifinalTwoWinner = bets[13]?.winner?.toString();
 
-  let result = [];
+  let semifinalsResults = [];
+  let correctIndex1 = null;
+  let correctIndex2 = null;
   if (!betSemifinalOneWinner || !betSemifinalTwoWinner) {
-    return [];
+    return { semifinalsResults: [], correctIndex1, correctIndex2 };
   }
 
   if (
     betSemifinalOneWinner === semifinalOneWinner ||
     betSemifinalOneWinner === semifinalTwoWinner
   ) {
-    result.push(3);
+    semifinalsResults.push(3);
+    correctIndex1 = 12;
   }
   if (
     betSemifinalTwoWinner === semifinalOneWinner ||
     betSemifinalTwoWinner === semifinalTwoWinner
   ) {
-    result.push(3);
+    semifinalsResults.push(3);
+    correctIndex2 = 13;
   }
 
-  return result;
+  return { semifinalsResults, correctIndex1, correctIndex2 };
 }

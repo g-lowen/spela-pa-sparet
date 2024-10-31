@@ -92,11 +92,10 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
                   {row.betResults.map((betResult, index) => {
                     return (
                       <CollapseRow
-                        key={betResult.date}
                         betResult={betResult}
                         index={index}
                         isLargeScreen={isLargeScreen}
-                        // onClick={handleClick}
+                        key={index}
                       />
                     );
                   })}

@@ -23,11 +23,10 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
       }
     };
   }
-  // TODO: Fix semifinals getting the wrong classname
   if (matchType === "semifinal") {
     return {
       firstClass: {
-        team: joinTeamMembersWithAmpersand(teams[0]),
+        team: joinTeamMembersWithAmpersand(bet.winner),
         className: getClassName(bet.winner, winner)
       },
       trolley: null
