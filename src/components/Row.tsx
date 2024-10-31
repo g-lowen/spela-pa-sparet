@@ -51,7 +51,19 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
         <TableCell align="right">{row.points}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <TableCell
+          onClick={handleClick}
+          sx={(theme) => ({
+            backgroundColor: theme.palette.background.paper,
+            ...theme.applyStyles("dark", {
+              backgroundColor: theme.palette.background.paper
+            }),
+            cursor: "pointer",
+            paddingBottom: 0,
+            paddingTop: 0
+          })}
+          colSpan={6}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: "6px" }}>
               <Table size="small" aria-label="bets" stickyHeader>
@@ -84,7 +96,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
                         betResult={betResult}
                         index={index}
                         isLargeScreen={isLargeScreen}
-                        onClick={handleClick}
+                        // onClick={handleClick}
                       />
                     );
                   })}

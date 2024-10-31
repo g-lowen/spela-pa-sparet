@@ -4,7 +4,6 @@ import { createRowData } from "./helpers/createRowData";
 import { styled } from "@mui/material/styles";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  cursor: "pointer",
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover
   }
@@ -65,15 +64,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export const CollapseRow = ({
   betResult,
   index,
-  isLargeScreen,
-  onClick
+  isLargeScreen
 }: {
   betResult: ReturnType<typeof createRowData>["betResults"][0];
   index: number;
   isLargeScreen: boolean;
-  onClick: () => void;
 }) => (
-  <StyledTableRow key={betResult.date} onClick={onClick}>
+  <StyledTableRow key={betResult.date}>
     <TableCell component="th" scope="row">
       {index + 1}
     </TableCell>
