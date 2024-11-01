@@ -58,10 +58,9 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
             ...theme.applyStyles("dark", {
               backgroundColor: theme.palette.background.paper
             }),
-            cursor: "pointer",
-            paddingBottom: 0,
-            paddingTop: 0
+            cursor: "pointer"
           })}
+          style={{ paddingBottom: 0, paddingTop: 0 }}
           colSpan={6}
         >
           <Collapse in={open} timeout="auto" unmountOnExit>
