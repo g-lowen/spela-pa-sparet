@@ -1,5 +1,4 @@
 import { MATCHES } from "../../constants/constants";
-import { MOCK_MATCHES } from "../../constants/mockConstants";
 import { Gambler } from "../../types";
 import { getTeams } from "./getTeams";
 
@@ -20,12 +19,12 @@ export function createRowData(gambler: Gambler) {
     wins,
     losses,
     points,
-    betResults: MOCK_MATCHES.map((match, index) => {
+    betResults: MATCHES.map((match, index) => {
       const { date, matchType } = match;
       const bet = bets[index];
       const { firstClass, trolley } = getTeams(match, bet);
       const semifinalIsPlayed =
-        MOCK_MATCHES[12]?.winner !== null || MOCK_MATCHES[13]?.winner !== null;
+        MATCHES[12]?.winner !== null || MATCHES[13]?.winner !== null;
 
       return {
         date,
@@ -51,7 +50,7 @@ function getResults(bets: Gambler["bets"]) {
     getSemifinalsResults(bets);
   const results = bets
     .map((bet, index) => {
-      const match = MOCK_MATCHES[index];
+      const match = MATCHES[index];
 
       if (!match || match.winner === null || bet.winner === null) {
         return null;
@@ -87,8 +86,8 @@ function getSemifinalsResults(bets: Gambler["bets"]): {
   correctIndex1: number | null;
   correctIndex2: number | null;
 } {
-  const semifinalOneWinner = MOCK_MATCHES[12]?.winner?.toString();
-  const semifinalTwoWinner = MOCK_MATCHES[13]?.winner?.toString();
+  const semifinalOneWinner = MATCHES[12]?.winner?.toString();
+  const semifinalTwoWinner = MATCHES[13]?.winner?.toString();
   const betSemifinalOneWinner = bets[12]?.winner?.toString();
   const betSemifinalTwoWinner = bets[13]?.winner?.toString();
 

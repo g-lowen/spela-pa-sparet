@@ -8,7 +8,7 @@ export const MATCHES: Match[] = [
       ["Ebba Kleberg von Sydow", "Anders Tegnell"],
       ["Hector Apelgren", "Peter Apelgren"]
     ],
-    winner: null
+    winner: ["Hector Apelgren", "Peter Apelgren"]
   },
   {
     date: "8 november",
@@ -133,501 +133,181 @@ export const GAMBLERS: Gambler[] = [
   {
     name: "Elin",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Fabian",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Fanni",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
-    ]
-  },
-  {
-    name: "Felix",
-    bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Gustav",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Irma",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Markus",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] }
     ]
   },
   {
     name: "Oskar",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Selma",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Farah Abadi", "Johan Glans"] }
     ]
   },
   {
     name: "Valle",
     bets: [
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      },
-      {
-        winner: null
-      }
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hanna Dorsin", "Emma Molin"] },
+      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Farah Abadi", "Johan Glans"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   }
 ] as const;
