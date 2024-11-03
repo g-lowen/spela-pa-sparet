@@ -6,7 +6,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { GAMBLERS } from "../constants/constants";
-import { MOCK_GAMBLERS } from "../constants/mockConstants";
 import { createRowData } from "./helpers/createRowData";
 import { Row } from "./Row";
 
@@ -50,8 +49,12 @@ export default function DataTable() {
                   }}
                   value={mode}
                 >
-                  <ToggleButton value="dark">🌙</ToggleButton>
-                  <ToggleButton value="light">☀️</ToggleButton>
+                  <ToggleButton value="dark" disabled={mode === "dark"}>
+                    🌙
+                  </ToggleButton>
+                  <ToggleButton value="light" disabled={mode === "light"}>
+                    ☀️
+                  </ToggleButton>
                 </ToggleButtonGroup>
               </TableCell>
               <TableCell>Namn</TableCell>
