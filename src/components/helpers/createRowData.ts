@@ -1,17 +1,10 @@
 import { MATCHES } from "../../constants/constants";
-import { Gambler } from "../../types";
+import { Gambler, Match } from "../../types";
 import { getTeams } from "./getTeams";
-
-const MATCH_TYPE_TRANSLATION = {
-  group: "Gruppspel",
-  semifinal: "Semifinal",
-  final: "Final"
-};
 
 export function createRowData(gambler: Gambler) {
   const { bets, name } = gambler;
-  const { matchesPlayed, wins, losses, points, correctIndex1, correctIndex2 } =
-    getResults(bets);
+  const { losses, matchesPlayed, points, semifinals, wins } = getResults(bets);
 
   return {
     name,
@@ -23,95 +16,129 @@ export function createRowData(gambler: Gambler) {
       const { date, matchType } = match;
       const bet = bets[index];
       const { firstClass, trolley } = getTeams(match, bet);
-      const semifinalIsPlayed =
-        MATCHES[12]?.winner !== null || MATCHES[13]?.winner !== null;
+
+      if (matchType === "semifinal") {
+        if (Array.isArray(semifinals)) {
+          return {
+            date,
+            firstClass: {
+              team: firstClass.team,
+              className:
+                semifinals[0] === null
+                  ? "guess"
+                  : semifinals[0]
+                    ? "correct"
+                    : "wrong"
+            },
+            trolley: {
+              team: trolley?.team,
+              className:
+                semifinals[1] === null
+                  ? "guess"
+                  : semifinals[1]
+                    ? "correct"
+                    : "wrong"
+            },
+            matchType
+          };
+        }
+      }
 
       return {
         date,
-        firstClass:
-          matchType === "semifinal" && semifinalIsPlayed
-            ? {
-                ...firstClass,
-                className:
-                  index === correctIndex1 || index === correctIndex2
-                    ? "correct"
-                    : "wrong"
-              }
-            : firstClass,
+        firstClass,
         trolley,
-        matchType: MATCH_TYPE_TRANSLATION[matchType]
+        matchType
       };
     })
   };
 }
 
 function getResults(bets: Gambler["bets"]) {
-  const { semifinalsResults, correctIndex1, correctIndex2 } =
-    getSemifinalsResults(bets);
-  const results = bets
-    .map((bet, index) => {
-      const match = MATCHES[index];
+  const results = bets.map((bet, index) => {
+    const match = MATCHES[index];
+    const multiplier = {
+      final: 5,
+      semifinal: 3,
+      group: 1
+    }[match.matchType];
+    if (bet.matchType === "semifinal") {
+      if (match.teams === null) return [null, null];
 
-      if (!match || match.winner === null || bet.winner === null) {
-        return null;
-      }
+      const { firstSemifinalBet, secondSemifinalBet } = getSemiFinalResults(
+        bet.semifinalFirst.toString(),
+        bet.semifinalSecond.toString(),
+        match.teams
+      );
 
-      if (match.matchType === "semifinal") {
-        return 0;
-      }
+      return [
+        firstSemifinalBet === null ? null : firstSemifinalBet ? 3 : 0,
+        secondSemifinalBet === null ? null : secondSemifinalBet ? 3 : 0
+      ];
+    }
 
-      if (match.winner.toString() === bet.winner.toString()) {
-        const multiplier = {
-          final: 5,
-          group: 1
-        }[match.matchType];
-        return 1 * multiplier;
-      }
+    if (match.winner === null) {
+      return null;
+    }
 
-      return 0;
-    })
-    .concat(semifinalsResults)
-    .filter((result) => result !== null);
+    if (match.winner.toString() === bet.winner.toString()) {
+      return 1 * multiplier;
+    }
 
-  const matchesPlayed = results.length;
-  const wins = results.filter((result) => result).length;
-  const losses = results.filter((result) => result === 0).length;
-  const points = results.reduce((sum, result) => sum + result, 0);
+    return 0;
+  });
 
-  return { matchesPlayed, wins, losses, points, correctIndex1, correctIndex2 };
+  const flatResults = results.flat().filter((result) => result !== null);
+  const matchesPlayed = flatResults.length;
+  const wins = flatResults.filter((result) => result).length;
+  const losses = flatResults.filter((result) => result === 0).length;
+  const points = flatResults.reduce((sum, result) => sum + result, 0);
+
+  return { losses, matchesPlayed, points, semifinals: results[12], wins };
 }
 
-function getSemifinalsResults(bets: Gambler["bets"]): {
-  semifinalsResults: number[];
-  correctIndex1: number | null;
-  correctIndex2: number | null;
-} {
-  const semifinalOneWinner = MATCHES[12]?.winner?.toString();
-  const semifinalTwoWinner = MATCHES[13]?.winner?.toString();
-  const betSemifinalOneWinner = bets[12]?.winner?.toString();
-  const betSemifinalTwoWinner = bets[13]?.winner?.toString();
+const getSemiFinalResults = (
+  semifinalFirst: string,
+  semifinalSecond: string,
+  semifinals: NonNullable<Match["teams"]>
+) => {
+  const oneSemiFinalPlayed = semifinals.some((team) => team === null);
+  const firstSemifinalBet = semifinals?.find(
+    (team) => team?.toString() === semifinalFirst.toString()
+  );
 
-  let semifinalsResults = [];
-  let correctIndex1 = null;
-  let correctIndex2 = null;
-  if (!betSemifinalOneWinner || !betSemifinalTwoWinner) {
-    return { semifinalsResults: [], correctIndex1, correctIndex2 };
+  if (oneSemiFinalPlayed && firstSemifinalBet) {
+    return {
+      firstSemifinalBet: !!firstSemifinalBet,
+      secondSemifinalBet: null
+    };
   }
 
-  if (
-    betSemifinalOneWinner === semifinalOneWinner ||
-    betSemifinalOneWinner === semifinalTwoWinner
-  ) {
-    semifinalsResults.push(3);
-    correctIndex1 = 12;
-  }
-  if (
-    betSemifinalTwoWinner === semifinalOneWinner ||
-    betSemifinalTwoWinner === semifinalTwoWinner
-  ) {
-    semifinalsResults.push(3);
-    correctIndex2 = 13;
+  let secondSemifinalBet: boolean | null = null;
+  if (firstSemifinalBet) {
+    const secondSemifinalTeam = semifinals?.find(
+      (team) => team !== firstSemifinalBet
+    );
+    if (secondSemifinalTeam) {
+      secondSemifinalBet =
+        secondSemifinalTeam.toString() === semifinalFirst.toString() ||
+        secondSemifinalTeam.toString() === semifinalSecond.toString();
+    }
+  } else {
+    secondSemifinalBet = !!semifinals?.find(
+      (team) => team?.toString() === semifinalSecond.toString()
+    );
   }
 
-  return { semifinalsResults, correctIndex1, correctIndex2 };
-}
+  if (oneSemiFinalPlayed) {
+    return {
+      firstSemifinalBet: null,
+      secondSemifinalBet
+    };
+  }
+
+  return {
+    firstSemifinalBet,
+    secondSemifinalBet
+  };
+};

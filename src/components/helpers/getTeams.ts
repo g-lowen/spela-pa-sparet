@@ -1,7 +1,21 @@
-import { Gambler, Match, Players, Winner } from "../../types";
+import { Gambler, Match, Team } from "../../types";
 
 export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   const { matchType, teams, winner } = match;
+
+  if ("semifinalFirst" in bet && "semifinalSecond" in bet) {
+    return {
+      firstClass: {
+        team: joinTeamMembersWithAmpersand(bet.semifinalFirst),
+        className: ""
+      },
+      trolley: {
+        team: joinTeamMembersWithAmpersand(bet.semifinalSecond),
+        className: ""
+      }
+    };
+  }
+
   if (teams === null) {
     return {
       firstClass: {
@@ -15,11 +29,17 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
     return {
       firstClass: {
         team: joinTeamMembersWithAmpersand(teams[0]),
-        className: getClassName(compareArrays(bet.winner, teams[0]), winner)
+        className: getClassName(
+          matchBetWithResult(bet.winner, teams[0]),
+          winner
+        )
       },
       trolley: {
         team: joinTeamMembersWithAmpersand(teams[1]),
-        className: getClassName(compareArrays(bet.winner, teams[1]), winner)
+        className: getClassName(
+          matchBetWithResult(bet.winner, teams[1]),
+          winner
+        )
       }
     };
   }
@@ -42,28 +62,24 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   };
 }
 
-function joinTeamMembersWithAmpersand(teams: Players | "draw" | null) {
+function joinTeamMembersWithAmpersand(teams: Team | "draw" | null) {
   if (teams === null || teams === "draw") {
     return teams;
   }
   return teams.toString().replace(",", " & ");
 }
 
-function getClassName(betWinner: Winner, winner: Winner) {
-  const drawSuffix = betWinner === "draw" ? "Draw" : "";
-  if (winner === null || betWinner === null) {
-    return betWinner === null ? "" : "guess" + drawSuffix;
+function getClassName(bet: Team | null, result: Team | null) {
+  if (result === null || bet === null) {
+    return bet === null ? "" : "guess";
   }
 
-  if (betWinner.toString() === winner.toString()) {
-    return "correct" + drawSuffix;
+  if (bet.toString() === result.toString()) {
+    return "correct";
   }
-  return "wrong" + drawSuffix;
+  return "wrong";
 }
 
-function compareArrays(array1: Winner, array2: Winner) {
-  if (array1 === "draw" || array2 === "draw") {
-    return "draw";
-  }
-  return array1?.toString() === array2?.toString() ? array1 : null;
+function matchBetWithResult(bet: Team | null, result: Team | null) {
+  return bet?.toString() === result?.toString() ? bet : null;
 }

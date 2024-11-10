@@ -18,8 +18,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Hanna Dorsin", "Emma Molin"],
       ["Ebba Kleberg von Sydow", "Anders Tegnell"]
     ],
-    winner: null
-    // winner: ["Hanna Dorsin", "Emma Molin"]
+    // winner: null
+    winner: ["Hanna Dorsin", "Emma Molin"]
   },
   {
     date: "15 november",
@@ -28,8 +28,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Gry Forssell", "Jonas Rhodiner"],
       ["Hanna Dorsin", "Emma Molin"]
     ],
-    winner: null
-    // winner: "draw"
+    // winner: null
+    winner: ["Gry Forssell", "Jonas Rhodiner"]
   },
   {
     date: "22 november",
@@ -38,8 +38,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Ebba Kleberg von Sydow", "Anders Tegnell"],
       ["Gry Forssell", "Jonas Rhodiner"]
     ],
-    winner: null
-    // winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+    // winner: null
+    winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
   },
   {
     date: "29 november",
@@ -48,8 +48,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Hanna Dorsin", "Emma Molin"],
       ["Hector Apelgren", "Peter Apelgren"]
     ],
-    winner: null
-    // winner: ["Hector Apelgren", "Peter Apelgren"]
+    // winner: null
+    winner: ["Hector Apelgren", "Peter Apelgren"]
   },
   {
     date: "6 december",
@@ -58,8 +58,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Hector Apelgren", "Peter Apelgren"],
       ["Gry Forssell", "Jonas Rhodiner"]
     ],
-    winner: null
-    // winner: ["Hector Apelgren", "Peter Apelgren"]
+    // winner: null
+    winner: ["Hector Apelgren", "Peter Apelgren"]
   },
   {
     date: "13 december",
@@ -68,8 +68,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Anders Eldeman", "Christoffer Nyqvist"],
       ["Farah Abadi", "Johan Glans"]
     ],
-    winner: null
-    // winner: ["Farah Abadi", "Johan Glans"]
+    // winner: null
+    winner: ["Farah Abadi", "Johan Glans"]
   },
   {
     date: "20 december",
@@ -78,8 +78,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Farah Abadi", "Johan Glans"],
       ["Jennifer Kücükaslan", "Johan Kücükaslan"]
     ],
-    winner: null
-    // winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+    // winner: null
+    winner: ["Farah Abadi", "Johan Glans"]
   },
   {
     date: "27 december",
@@ -88,8 +88,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Jennifer Kücükaslan", "Johan Kücükaslan"],
       ["Messiah Hallberg", "Sara Wimmercranz"]
     ],
-    winner: null
-    // winner: ["Messiah Hallberg", "Sara Wimmercranz"]
+    // winner: null
+    winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
   },
   {
     date: "3 januari",
@@ -98,8 +98,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Messiah Hallberg", "Sara Wimmercranz"],
       ["Anders Eldeman", "Christoffer Nyqvist"]
     ],
-    winner: null
-    // winner: ["Messiah Hallberg", "Sara Wimmercranz"]
+    // winner: null
+    winner: ["Messiah Hallberg", "Sara Wimmercranz"]
   },
   {
     date: "10 januari",
@@ -108,8 +108,8 @@ export const MOCK_MATCHES: Match[] = [
       ["Anders Eldeman", "Christoffer Nyqvist"],
       ["Jennifer Kücükaslan", "Johan Kücükaslan"]
     ],
-    winner: null
-    // winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+    // winner: null
+    winner: ["Anders Eldeman", "Christoffer Nyqvist"]
   },
   {
     date: "17 januari",
@@ -118,28 +118,21 @@ export const MOCK_MATCHES: Match[] = [
       ["Farah Abadi", "Johan Glans"],
       ["Messiah Hallberg", "Sara Wimmercranz"]
     ],
-    winner: null
-    // winner: ["Farah Abadi", "Johan Glans"]
+    // winner: null
+    winner: ["Farah Abadi", "Johan Glans"]
   },
   {
-    date: "24/31 januari",
+    date: "test januari",
     matchType: "semifinal",
     teams: [
-      ["Hanna Dorsin", "Emma Molin"],
-      ["Messiah Hallberg", "Sara Wimmercranz"]
+      // ["Farah Abadi", "Johan Glans"],
+      ["Messiah Hallberg", "Sara Wimmercranz"],
+      ["Hanna Dorsin", "Emma Molin"]
+      // null
     ],
+    // teams: null,
     // winner: null
     winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-  },
-  {
-    date: "24/31 januari",
-    matchType: "semifinal",
-    teams: [
-      ["Anders Eldeman", "Christoffer Nyqvist"],
-      ["Hector Apelgren", "Peter Apelgren"]
-    ],
-    winner: null
-    // winner: ["Hector Apelgren", "Peter Apelgren"]
   },
   {
     date: "7 februari",
@@ -158,48 +151,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Elin",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Hector Apelgren", "Peter Apelgren"]
+        matchType: "semifinal",
+        semifinalFirst: ["Anders Eldeman", "Christoffer Nyqvist"],
+        semifinalSecond: ["Hanna Dorsin", "Emma Molin"]
       },
       {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -208,49 +213,61 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Fabian",
     bets: [
       {
-        winner: ["Hector Apelgren", "Peter Apelgren"]
-      },
-      {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
-        winner: ["Gry Forssell", "Jonas Rhodiner"]
-      },
-      {
-        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
-      },
-      {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
+        winner: ["Gry Forssell", "Jonas Rhodiner"]
+      },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
+        winner: ["Hector Apelgren", "Peter Apelgren"]
+      },
+      {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
-      },
-      {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
+      },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Messiah Hallberg", "Sara Wimmercranz"]
+      },
+      {
+        matchType: "final",
+        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       }
     ]
   },
@@ -258,48 +275,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Fanni",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
-        winner: "draw"
-      },
-      {
-        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
-      },
-      {
-        winner: ["Hector Apelgren", "Peter Apelgren"]
-      },
-      {
-        winner: ["Hector Apelgren", "Peter Apelgren"]
-      },
-      {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
-        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
-      },
-      {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
-        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
-      },
-      {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
+        winner: ["Hector Apelgren", "Peter Apelgren"]
+      },
+      {
+        matchType: "group",
+        winner: ["Farah Abadi", "Johan Glans"]
+      },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      {
+        matchType: "group",
+        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
+      },
+      {
+        matchType: "group",
+        winner: ["Messiah Hallberg", "Sara Wimmercranz"]
+      },
+      {
+        matchType: "group",
+        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+      },
+      {
+        matchType: "group",
+        winner: ["Farah Abadi", "Johan Glans"]
+      },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
+      },
+      {
+        matchType: "final",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       }
     ]
@@ -308,48 +337,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Felix",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Ebba Kleberg von Sydow", "Anders Tegnell"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -358,48 +399,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Gustav",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -408,48 +461,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Irma",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -458,48 +523,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Markus",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -508,48 +585,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Oskar",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -558,48 +647,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Selma",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]
@@ -608,48 +709,60 @@ export const MOCK_GAMBLERS: Gambler[] = [
     name: "Valle",
     bets: [
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Gry Forssell", "Jonas Rhodiner"]
       },
       {
+        matchType: "group",
         winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
       },
       {
+        matchType: "group",
         winner: ["Hanna Dorsin", "Emma Molin"]
       },
       {
+        matchType: "group",
         winner: ["Hector Apelgren", "Peter Apelgren"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Farah Abadi", "Johan Glans"]
       },
       {
+        matchType: "group",
         winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
+        matchType: "group",
         winner: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
+        matchType: "group",
         winner: ["Messiah Hallberg", "Sara Wimmercranz"]
       },
       {
-        winner: ["Anders Eldeman", "Christoffer Nyqvist"]
+        matchType: "semifinal",
+        semifinalFirst: ["Hanna Dorsin", "Emma Molin"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
       },
       {
-        winner: ["Farah Abadi", "Johan Glans"]
-      },
-      {
+        matchType: "final",
         winner: ["Farah Abadi", "Johan Glans"]
       }
     ]

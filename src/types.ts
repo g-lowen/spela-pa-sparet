@@ -1,4 +1,4 @@
-export type Players =
+export type Team =
   | ["Ebba Kleberg von Sydow", "Anders Tegnell"]
   | ["Hector Apelgren", "Peter Apelgren"]
   | ["Hanna Dorsin", "Emma Molin"]
@@ -10,16 +10,25 @@ export type Players =
 
 export interface Match {
   date: string;
-  matchType: "group" | "semifinal" | "final";
-  teams: [Players, Players] | null;
-  winner: Winner;
+  matchType: MatchType;
+  teams: [Team, Team] | [Team, null] | null;
+  winner: Team | null;
 }
 
 export interface Gambler {
   name: string;
-  bets: {
-    winner: Winner;
-  }[];
+  bets: Bet[];
 }
 
-export type Winner = Players | "draw" | null;
+type Bet =
+  | {
+      matchType: Exclude<MatchType, "semifinal">;
+      winner: Team;
+    }
+  | {
+      matchType: Extract<MatchType, "semifinal">;
+      semifinalFirst: Team;
+      semifinalSecond: Team;
+    };
+
+type MatchType = "group" | "semifinal" | "final";

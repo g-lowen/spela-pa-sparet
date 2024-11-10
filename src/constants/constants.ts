@@ -116,12 +116,6 @@ export const MATCHES: Match[] = [
     winner: null
   },
   {
-    date: "24/31 januari",
-    matchType: "semifinal",
-    teams: null,
-    winner: null
-  },
-  {
     date: "7 februari",
     matchType: "final",
     teams: null,
@@ -133,181 +127,298 @@ export const GAMBLERS: Gambler[] = [
   {
     name: "Elin",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Farah Abadi", "Johan Glans"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Fabian",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
-      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { matchType: "group", winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Hanna Dorsin", "Emma Molin"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Fanni",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Gustav",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Irma",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Farah Abadi", "Johan Glans"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Markus",
     bets: [
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] }
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Ebba Kleberg von Sydow", "Anders Tegnell"],
+        semifinalSecond: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      {
+        matchType: "final",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      }
     ]
   },
   {
     name: "Oskar",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Hanna Dorsin", "Emma Molin"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   },
   {
     name: "Selma",
     bets: [
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Farah Abadi", "Johan Glans"] }
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Messiah Hallberg", "Sara Wimmercranz"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Farah Abadi", "Johan Glans"]
+      },
+      { matchType: "final", winner: ["Farah Abadi", "Johan Glans"] }
     ]
   },
   {
     name: "Valle",
     bets: [
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hanna Dorsin", "Emma Molin"] },
-      { winner: ["Gry Forssell", "Jonas Rhodiner"] },
-      { winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Farah Abadi", "Johan Glans"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] },
-      { winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
-      { winner: ["Hector Apelgren", "Peter Apelgren"] }
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hanna Dorsin", "Emma Molin"] },
+      { matchType: "group", winner: ["Gry Forssell", "Jonas Rhodiner"] },
+      {
+        matchType: "group",
+        winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
+      },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Hector Apelgren", "Peter Apelgren"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      {
+        matchType: "group",
+        winner: ["Jennifer Kücükaslan", "Johan Kücükaslan"]
+      },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Anders Eldeman", "Christoffer Nyqvist"] },
+      { matchType: "group", winner: ["Farah Abadi", "Johan Glans"] },
+      {
+        matchType: "semifinal",
+        semifinalFirst: ["Hector Apelgren", "Peter Apelgren"],
+        semifinalSecond: ["Anders Eldeman", "Christoffer Nyqvist"]
+      },
+      { matchType: "final", winner: ["Hector Apelgren", "Peter Apelgren"] }
     ]
   }
 ] as const;
