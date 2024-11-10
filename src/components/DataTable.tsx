@@ -29,7 +29,7 @@ export default function DataTable() {
               ["&:last-of-type:not(:first-of-type)"]: {
                 padding: "6px"
               },
-              ["&:first-of-type:not(:first-child:has(.MuiCollapse-root))"]: {
+              ["&:first-of-type:not(:first-of-type:has(.MuiCollapse-root))"]: {
                 padding: "6px"
               }
             }
