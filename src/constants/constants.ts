@@ -17,7 +17,7 @@ export const MATCHES: Match[] = [
       ["Hanna Dorsin", "Emma Molin"],
       ["Ebba Kleberg von Sydow", "Anders Tegnell"]
     ],
-    winner: null
+    winner: ["Ebba Kleberg von Sydow", "Anders Tegnell"]
   },
   {
     date: "15 november",
