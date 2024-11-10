@@ -65,7 +65,7 @@ export function Row(props: { row: ReturnType<typeof createRowData> }) {
         >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: "6px" }}>
-              <Table size="small" aria-label="bets" stickyHeader>
+              <Table size="small" aria-label="bets">
                 <TableHead>
                   <TableRow>
                     <TableCell>Avsnitt</TableCell>

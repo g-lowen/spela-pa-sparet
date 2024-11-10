@@ -23,7 +23,6 @@ export default function DataTable() {
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer
         sx={{
-          maxHeight: "100vh",
           ...(isSmallScreen && {
             ["& .MuiTableCell-root"]: {
               padding: "6px 2px",
