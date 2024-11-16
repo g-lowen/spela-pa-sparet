@@ -66,8 +66,8 @@ function getResults(bets: Gambler["bets"]) {
       if (match.teams === null) return [null, null];
 
       const { firstSemifinalBet, secondSemifinalBet } = getSemiFinalResults(
-        bet.semifinalFirst.toString(),
-        bet.semifinalSecond.toString(),
+        bet.semifinalFirst,
+        bet.semifinalSecond,
         match.teams
       );
 
@@ -81,7 +81,7 @@ function getResults(bets: Gambler["bets"]) {
       return null;
     }
 
-    if (match.winner.toString() === bet.winner.toString()) {
+    if (match.winner === bet.winner) {
       return 1 * multiplier;
     }
 
@@ -103,9 +103,7 @@ const getSemiFinalResults = (
   semifinals: NonNullable<Match["teams"]>
 ) => {
   const oneSemiFinalPlayed = semifinals.some((team) => team === null);
-  const firstSemifinalBet = semifinals?.find(
-    (team) => team?.toString() === semifinalFirst.toString()
-  );
+  const firstSemifinalBet = semifinals?.find((team) => team === semifinalFirst);
 
   if (oneSemiFinalPlayed && firstSemifinalBet) {
     return {
@@ -121,13 +119,11 @@ const getSemiFinalResults = (
     );
     if (secondSemifinalTeam) {
       secondSemifinalBet =
-        secondSemifinalTeam.toString() === semifinalFirst.toString() ||
-        secondSemifinalTeam.toString() === semifinalSecond.toString();
+        secondSemifinalTeam === semifinalFirst ||
+        secondSemifinalTeam === semifinalSecond;
     }
   } else {
-    secondSemifinalBet = !!semifinals?.find(
-      (team) => team?.toString() === semifinalSecond.toString()
-    );
+    secondSemifinalBet = !!semifinals?.find((team) => team === semifinalSecond);
   }
 
   if (oneSemiFinalPlayed) {

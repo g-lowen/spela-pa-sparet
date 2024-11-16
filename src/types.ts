@@ -1,12 +1,12 @@
 export type Team =
-  | ["Ebba Kleberg von Sydow", "Anders Tegnell"]
-  | ["Hector Apelgren", "Peter Apelgren"]
-  | ["Hanna Dorsin", "Emma Molin"]
-  | ["Gry Forssell", "Jonas Rhodiner"]
-  | ["Messiah Hallberg", "Sara Wimmercranz"]
-  | ["Anders Eldeman", "Christoffer Nyqvist"]
-  | ["Jennifer Kücükaslan", "Johan Kücükaslan"]
-  | ["Farah Abadi", "Johan Glans"];
+  | "Ebba Kleberg von Sydow & Anders Tegnell"
+  | "Hector Apelgren & Peter Apelgren"
+  | "Hanna Dorsin & Emma Molin"
+  | "Gry Forssell & Jonas Rhodiner"
+  | "Messiah Hallberg & Sara Wimmercranz"
+  | "Anders Eldeman & Christoffer Nyqvist"
+  | "Jennifer Kücükaslan & Johan Kücükaslan"
+  | "Farah Abadi & Johan Glans";
 
 export interface Match {
   date: string;

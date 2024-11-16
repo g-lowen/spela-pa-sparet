@@ -6,11 +6,11 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   if ("semifinalFirst" in bet && "semifinalSecond" in bet) {
     return {
       firstClass: {
-        team: joinTeamMembersWithAmpersand(bet.semifinalFirst),
+        team: bet.semifinalFirst,
         className: ""
       },
       trolley: {
-        team: joinTeamMembersWithAmpersand(bet.semifinalSecond),
+        team: bet.semifinalSecond,
         className: ""
       }
     };
@@ -19,7 +19,7 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   if (teams === null) {
     return {
       firstClass: {
-        team: joinTeamMembersWithAmpersand(bet.winner),
+        team: bet.winner,
         className: "guess"
       },
       trolley: null
@@ -28,14 +28,14 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   if (matchType === "group") {
     return {
       firstClass: {
-        team: joinTeamMembersWithAmpersand(teams[0]),
+        team: teams[0],
         className: getClassName(
           matchBetWithResult(bet.winner, teams[0]),
           winner
         )
       },
       trolley: {
-        team: joinTeamMembersWithAmpersand(teams[1]),
+        team: teams[1],
         className: getClassName(
           matchBetWithResult(bet.winner, teams[1]),
           winner
@@ -46,7 +46,7 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   if (matchType === "semifinal") {
     return {
       firstClass: {
-        team: joinTeamMembersWithAmpersand(bet.winner),
+        team: bet.winner,
         className: getClassName(bet.winner, winner)
       },
       trolley: null
@@ -55,18 +55,11 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
 
   return {
     firstClass: {
-      team: joinTeamMembersWithAmpersand(bet.winner),
+      team: bet.winner,
       className: getClassName(bet.winner, winner)
     },
     trolley: null
   };
-}
-
-function joinTeamMembersWithAmpersand(teams: Team | "draw" | null) {
-  if (teams === null || teams === "draw") {
-    return teams;
-  }
-  return teams.toString().replace(",", " & ");
 }
 
 function getClassName(bet: Team | null, result: Team | null) {
@@ -74,12 +67,12 @@ function getClassName(bet: Team | null, result: Team | null) {
     return bet === null ? "" : "guess";
   }
 
-  if (bet.toString() === result.toString()) {
+  if (bet === result) {
     return "correct";
   }
   return "wrong";
 }
 
 function matchBetWithResult(bet: Team | null, result: Team | null) {
-  return bet?.toString() === result?.toString() ? bet : null;
+  return bet === result ? bet : null;
 }
