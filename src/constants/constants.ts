@@ -112,7 +112,7 @@ export const MATCHES: Match[] = [
     teams: null,
     winner: null
   }
-] as const;
+];
 
 export const GAMBLERS: Gambler[] = [
   {
@@ -322,4 +322,10 @@ export const GAMBLERS: Gambler[] = [
       { matchType: "final", winner: "Hector Apelgren & Peter Apelgren" }
     ]
   }
-] as const;
+];
+
+export const MATCH_TYPE_TRANSLATION = {
+  group: "Gruppspel",
+  semifinal: "Semifinaler",
+  final: "Final"
+} as const;

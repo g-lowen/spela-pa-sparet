@@ -2,12 +2,7 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { createRowData } from "./helpers/createRowData";
 import { styled } from "@mui/material/styles";
-
-const MATCH_TYPE_TRANSLATION = {
-  group: "Gruppspel",
-  semifinal: "Semifinaler",
-  final: "Final"
-};
+import { MATCH_TYPE_TRANSLATION } from "../constants/constants";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {

@@ -755,4 +755,4 @@ export const MOCK_GAMBLERS: Gambler[] = [
       }
     ]
   }
-] as const;
+];
