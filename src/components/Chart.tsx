@@ -42,6 +42,7 @@ export const Chart = ({ data, matchType }: ChartProps) => {
           valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters
         }
       ]}
+      sx={{ "&&": { touchAction: "auto", userSelect: "none" } }}
       height={matchType === "semifinal" ? 400 : 300}
     />
   );
