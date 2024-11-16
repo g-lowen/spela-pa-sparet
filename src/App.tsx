@@ -6,20 +6,24 @@ import { Header } from "./components/Header";
 import { MATCHES } from "./constants/constants";
 
 function App() {
-  const latestMatch = MATCHES.filter((match) => match.winner !== null).at(-1);
+  const upcomingMatch = MATCHES.find((match) => match.winner === null);
 
   return (
     <>
       <Header />
       <center>
         <Box sx={{ padding: "6px" }}>
-          <h1>Nästa avsnitt</h1>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <ChartCard
-              match={latestMatch}
-              matchIndex={latestMatch && MATCHES.indexOf(latestMatch)}
-            />
-          </Box>
+          {upcomingMatch ? (
+            <>
+              <h1>Nästa avsnitt</h1>
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <ChartCard
+                  match={upcomingMatch}
+                  matchIndex={upcomingMatch && MATCHES.indexOf(upcomingMatch)}
+                />
+              </Box>
+            </>
+          ) : null}
           <h2>Tabell</h2>
           <DataTable />
           <h2>Alla avsnitt</h2>

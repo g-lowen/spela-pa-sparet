@@ -23,7 +23,7 @@ export const MATCHES: Match[] = [
     date: "15 november",
     matchType: "group",
     teams: ["Gry Forssell & Jonas Rhodiner", "Hanna Dorsin & Emma Molin"],
-    winner: null
+    winner: "Gry Forssell & Jonas Rhodiner"
   },
   {
     date: "22 november",
