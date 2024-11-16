@@ -9,14 +9,9 @@ import { GAMBLERS } from "../constants/constants";
 import { createRowData } from "./helpers/createRowData";
 import { Row } from "./Row";
 
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-
-import { useColorScheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function DataTable() {
-  const { mode, setMode } = useColorScheme();
   const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   return (
@@ -39,23 +34,7 @@ export default function DataTable() {
         <Table aria-label="collapsible table" size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ width: "80px" }}>
-                <ToggleButtonGroup
-                  size="small"
-                  exclusive
-                  onChange={(_event, newMode: "light" | "dark") => {
-                    setMode(newMode);
-                  }}
-                  value={mode}
-                >
-                  <ToggleButton value="dark" disabled={mode === "dark"}>
-                    🌙
-                  </ToggleButton>
-                  <ToggleButton value="light" disabled={mode === "light"}>
-                    ☀️
-                  </ToggleButton>
-                </ToggleButtonGroup>
-              </TableCell>
+              <TableCell width="20" />
               <TableCell>Namn</TableCell>
               <TableCell align="right">Matcher</TableCell>
               <TableCell align="right">✔️</TableCell>
