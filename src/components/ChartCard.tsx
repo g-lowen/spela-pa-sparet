@@ -1,16 +1,17 @@
 import { GAMBLERS, MATCH_TYPE_TRANSLATION } from "../constants/constants";
 import { Match } from "../types";
-import Card from "@mui/material/Card";
+import Card, { CardProps as MuiCardProps } from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import { getPercentage } from "./helpers/getPercentage";
 import { Chart } from "./Chart";
 
-interface CardProps {
+interface CardProps extends MuiCardProps {
   matchIndex?: number;
   match?: Match;
 }
 
-export const ChartCard = ({ matchIndex, match }: CardProps) => {
+export const ChartCard = (props: CardProps) => {
+  const { match, matchIndex } = props;
   if (!match || matchIndex === undefined) {
     return null;
   }
@@ -24,7 +25,7 @@ export const ChartCard = ({ matchIndex, match }: CardProps) => {
       : MATCH_TYPE_TRANSLATION[match.matchType];
 
   return (
-    <Card sx={{ flexBasis: "400px" }}>
+    <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...props}>
       <CardHeader
         sx={{ textAlign: "center" }}
         title={`${title} (${match.date})`}
