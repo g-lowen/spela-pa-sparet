@@ -1,5 +1,9 @@
 import "./App.css";
+
+import { useState } from "react";
+
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
@@ -7,6 +11,8 @@ import { MATCHES } from "./constants/constants";
 import { CardsContainer } from "./components/CardsContainer";
 
 function App() {
+  const [showTable, setShowTable] = useState(false);
+
   const upcomingMatch = MATCHES.find((match) => match.winner === null);
   const groupOne = MATCHES.filter((_match, index) => index < 6);
   const groupTwo = MATCHES.filter((_match, index) => index >= 6 && index < 12);
@@ -29,8 +35,23 @@ function App() {
               />
             </>
           ) : null}
-          <h2>Tabell</h2>
-          <DataTable />
+          <Box
+            sx={{
+              alignItems: "center",
+              display: "flex",
+              gap: "6px",
+              justifyContent: "center"
+            }}
+          >
+            <h2>Tabell</h2>
+            <Button
+              onClick={() => setShowTable((prev) => !prev)}
+              variant="contained"
+            >
+              {showTable ? "Göm" : "Visa"}
+            </Button>
+          </Box>
+          <DataTable showTable={showTable} />
           <h2>Första gruppen</h2>
           <CardsContainer>
             {groupOne.map((match, index) => (

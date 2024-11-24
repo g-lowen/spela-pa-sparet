@@ -11,7 +11,7 @@ interface CardProps extends MuiCardProps {
 }
 
 export const ChartCard = (props: CardProps) => {
-  const { match, matchIndex } = props;
+  const { match, matchIndex, ...rest } = props;
   if (!match || matchIndex === undefined) {
     return null;
   }
@@ -25,7 +25,7 @@ export const ChartCard = (props: CardProps) => {
       : MATCH_TYPE_TRANSLATION[match.matchType];
 
   return (
-    <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...props}>
+    <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...rest}>
       <CardHeader
         sx={{ textAlign: "center" }}
         title={`${title} (${match.date})`}
