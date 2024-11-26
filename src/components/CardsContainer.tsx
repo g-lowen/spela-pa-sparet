@@ -6,6 +6,7 @@ export const CardsContainer = (props: BoxProps) => {
       sx={{
         display: "flex",
         gap: "2px",
+        maxWidth: "960px",
         overflowX: "scroll",
         paddingBottom: "5px",
         scrollSnapType: "x mandatory"

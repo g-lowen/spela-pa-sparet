@@ -24,6 +24,7 @@ export default function DataTable({ showTable }: DataTableProps) {
       {showTable ? (
         <Paper
           sx={{
+            maxWidth: "960px",
             width: "100%"
           }}
         >
@@ -66,9 +67,10 @@ export default function DataTable({ showTable }: DataTableProps) {
         </Paper>
       ) : (
         <Skeleton
-          variant="rectangular"
           height={343}
-          sx={{ borderRadius: "5px" }}
+          width="100%"
+          sx={{ borderRadius: "5px", maxWidth: "960px" }}
+          variant="rectangular"
         />
       )}
     </>
