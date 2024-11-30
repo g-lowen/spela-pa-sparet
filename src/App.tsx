@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { useState } from "react";
 
 import Box from "@mui/material/Box";
@@ -21,7 +19,7 @@ function App() {
   );
 
   return (
-    <>
+    <Box sx={{ position: "relative" }}>
       <Header />
       <center>
         <Box sx={{ padding: "6px" }}>
@@ -72,7 +70,7 @@ function App() {
           </CardsContainer>
         </Box>
       </center>
-    </>
+    </Box>
   );
 }
 
