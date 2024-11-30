@@ -1,6 +1,7 @@
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useColorScheme } from "@mui/material/styles";
+import Snowfall from "react-snowfall";
 
 export const Header = () => {
   const { mode, setMode } = useColorScheme();
@@ -14,6 +15,10 @@ export const Header = () => {
         paddingBottom: "0px"
       }}
     >
+      <Snowfall
+        color={mode === "dark" ? "snow" : "#dee4fd"}
+        snowflakeCount={50}
+      />
       <ToggleButtonGroup
         size="small"
         exclusive
