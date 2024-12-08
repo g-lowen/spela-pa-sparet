@@ -47,7 +47,7 @@ export const MATCHES: Match[] = [
       "Hector Apelgren & Peter Apelgren",
       "Gry Forssell & Jonas Rhodiner"
     ],
-    winner: null
+    winner: "Hector Apelgren & Peter Apelgren"
   },
   {
     date: "13 december",
