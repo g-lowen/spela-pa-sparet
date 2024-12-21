@@ -65,7 +65,7 @@ export const MATCHES: Match[] = [
       "Farah Abadi & Johan Glans",
       "Jennifer Kücükaslan & Johan Kücükaslan"
     ],
-    winner: null
+    winner: "Farah Abadi & Johan Glans"
   },
   {
     date: "27 december",
