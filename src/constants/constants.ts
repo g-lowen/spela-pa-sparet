@@ -74,7 +74,7 @@ export const MATCHES: Match[] = [
       "Jennifer Kücükaslan & Johan Kücükaslan",
       "Messiah Hallberg & Sara Wimmercranz"
     ],
-    winner: null
+    winner: "Jennifer Kücükaslan & Johan Kücükaslan"
   },
   {
     date: "3 januari",
@@ -83,7 +83,7 @@ export const MATCHES: Match[] = [
       "Messiah Hallberg & Sara Wimmercranz",
       "Anders Eldeman & Christoffer Nyqvist"
     ],
-    winner: null
+    winner: "Anders Eldeman & Christoffer Nyqvist"
   },
   {
     date: "10 januari",
