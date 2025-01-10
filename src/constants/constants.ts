@@ -92,7 +92,7 @@ export const MATCHES: Match[] = [
       "Anders Eldeman & Christoffer Nyqvist",
       "Jennifer Kücükaslan & Johan Kücükaslan"
     ],
-    winner: null
+    winner: "Jennifer Kücükaslan & Johan Kücükaslan"
   },
   {
     date: "17 januari",
