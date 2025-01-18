@@ -98,7 +98,7 @@ export const MATCHES: Match[] = [
     date: "17 januari",
     matchType: "group",
     teams: ["Farah Abadi & Johan Glans", "Messiah Hallberg & Sara Wimmercranz"],
-    winner: null
+    winner: "Messiah Hallberg & Sara Wimmercranz"
   },
   {
     date: "24/31 januari",
