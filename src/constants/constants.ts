@@ -103,7 +103,7 @@ export const MATCHES: Match[] = [
   {
     date: "24/31 januari",
     matchType: "semifinal",
-    teams: null,
+    teams: ["Hector Apelgren & Peter Apelgren", null],
     winner: null
   },
   {
