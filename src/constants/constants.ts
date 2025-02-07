@@ -113,7 +113,7 @@ export const MATCHES: Match[] = [
     date: "7 februari",
     matchType: "final",
     teams: null,
-    winner: null
+    winner: "Hector Apelgren & Peter Apelgren"
   }
 ];
 
