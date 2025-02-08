@@ -19,56 +19,54 @@ function App() {
   );
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box>
       <Header />
-      <center>
-        <Box sx={{ padding: "6px" }}>
-          {upcomingMatch ? (
-            <>
-              <h1>Nästa avsnitt</h1>
-              <ChartCard
-                match={upcomingMatch}
-                matchIndex={upcomingMatch && MATCHES.indexOf(upcomingMatch)}
-                sx={{ maxWidth: "355px" }}
-              />
-            </>
-          ) : null}
-          <Box
-            sx={{
-              alignItems: "center",
-              display: "flex",
-              gap: "6px",
-              justifyContent: "center"
-            }}
+      <center style={{ padding: "6px" }}>
+        {upcomingMatch ? (
+          <>
+            <h1>Nästa avsnitt</h1>
+            <ChartCard
+              match={upcomingMatch}
+              matchIndex={upcomingMatch && MATCHES.indexOf(upcomingMatch)}
+              sx={{ maxWidth: "355px" }}
+            />
+          </>
+        ) : null}
+        <Box
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            gap: "6px",
+            justifyContent: "center"
+          }}
+        >
+          <h2>Tabell</h2>
+          <Button
+            onClick={() => setShowTable((prev) => !prev)}
+            variant="contained"
           >
-            <h2>Tabell</h2>
-            <Button
-              onClick={() => setShowTable((prev) => !prev)}
-              variant="contained"
-            >
-              {showTable ? "Göm" : "Visa"}
-            </Button>
-          </Box>
-          <DataTable showTable={showTable} />
-          <h2>Första gruppen</h2>
-          <CardsContainer>
-            {groupOne.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index} />
-            ))}
-          </CardsContainer>
-          <h2>Andra gruppen</h2>
-          <CardsContainer>
-            {groupTwo.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 6} />
-            ))}
-          </CardsContainer>
-          <h2>Slutspel</h2>
-          <CardsContainer>
-            {playoff.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 12} />
-            ))}
-          </CardsContainer>
+            {showTable ? "Göm" : "Visa"}
+          </Button>
         </Box>
+        <DataTable showTable={showTable} />
+        <h2>Första gruppen</h2>
+        <CardsContainer>
+          {groupOne.map((match, index) => (
+            <ChartCard key={index} match={match} matchIndex={index} />
+          ))}
+        </CardsContainer>
+        <h2>Andra gruppen</h2>
+        <CardsContainer>
+          {groupTwo.map((match, index) => (
+            <ChartCard key={index} match={match} matchIndex={index + 6} />
+          ))}
+        </CardsContainer>
+        <h2>Slutspel</h2>
+        <CardsContainer>
+          {playoff.map((match, index) => (
+            <ChartCard key={index} match={match} matchIndex={index + 12} />
+          ))}
+        </CardsContainer>
       </center>
     </Box>
   );

@@ -72,8 +72,8 @@ function getResults(bets: Gambler["bets"]) {
       );
 
       return [
-        firstSemifinalBet === null ? null : firstSemifinalBet ? 3 : 0,
-        secondSemifinalBet === null ? null : secondSemifinalBet ? 3 : 0
+        firstSemifinalBet === null ? null : firstSemifinalBet ? multiplier : 0,
+        secondSemifinalBet === null ? null : secondSemifinalBet ? multiplier : 0
       ];
     }
 

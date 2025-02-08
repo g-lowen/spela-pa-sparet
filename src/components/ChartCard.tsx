@@ -17,8 +17,8 @@ export const ChartCard = (props: CardProps) => {
   }
 
   const groupData = getGroupData(match, matchIndex);
-  const semifinalsData = getSemifinalsData(match.matchType);
-  const finalsData = getFinalsData(match.matchType);
+  const semifinalsData = getSemifinalsData();
+  const finalsData = getFinalsData();
   const title =
     MATCH_TYPE_TRANSLATION[match.matchType] === "Gruppspel"
       ? `Avsnitt ${matchIndex + 1}`
@@ -104,10 +104,7 @@ function getGroupData(match: Match, matchIndex: number) {
   ];
 }
 
-function getSemifinalsData(matchType: Match["matchType"]) {
-  if (matchType !== "semifinal") {
-    return null;
-  }
+function getSemifinalsData() {
   const semifinalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
@@ -156,10 +153,7 @@ function getSemifinalsData(matchType: Match["matchType"]) {
   });
 }
 
-function getFinalsData(matchType: Match["matchType"]) {
-  if (matchType !== "final") {
-    return null;
-  }
+function getFinalsData() {
   const finalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
