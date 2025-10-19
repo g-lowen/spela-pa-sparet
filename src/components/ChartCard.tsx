@@ -1,4 +1,5 @@
-import { GAMBLERS, MATCH_TYPE_TRANSLATION } from "../constants/constants";
+import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
+import { GAMBLERS } from "../constants/gamblers";
 import { Match } from "../types";
 import Card, { CardProps as MuiCardProps } from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";

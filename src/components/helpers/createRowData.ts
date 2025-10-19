@@ -1,4 +1,4 @@
-import { MATCHES } from "../../constants/constants";
+import { MATCHES } from "../../constants/matches";
 import { Gambler, Match } from "../../types";
 import { getTeams } from "./getTeams";
 
@@ -28,7 +28,7 @@ export function createRowData(gambler: Gambler) {
                   ? "guess"
                   : semifinals[0]
                     ? "correct"
-                    : "wrong"
+                    : "wrong",
             },
             trolley: {
               team: trolley?.team,
@@ -37,9 +37,9 @@ export function createRowData(gambler: Gambler) {
                   ? "guess"
                   : semifinals[1]
                     ? "correct"
-                    : "wrong"
+                    : "wrong",
             },
-            matchType
+            matchType,
           };
         }
       }
@@ -48,9 +48,9 @@ export function createRowData(gambler: Gambler) {
         date,
         firstClass,
         trolley,
-        matchType
+        matchType,
       };
-    })
+    }),
   };
 }
 
@@ -60,7 +60,7 @@ function getResults(bets: Gambler["bets"]) {
     const multiplier = {
       final: 5,
       semifinal: 3,
-      group: 1
+      group: 1,
     }[match.matchType];
     if (bet.matchType === "semifinal") {
       if (match.teams === null) return [null, null];
@@ -73,7 +73,11 @@ function getResults(bets: Gambler["bets"]) {
 
       return [
         firstSemifinalBet === null ? null : firstSemifinalBet ? multiplier : 0,
-        secondSemifinalBet === null ? null : secondSemifinalBet ? multiplier : 0
+        secondSemifinalBet === null
+          ? null
+          : secondSemifinalBet
+            ? multiplier
+            : 0,
       ];
     }
 
@@ -108,7 +112,7 @@ const getSemiFinalResults = (
   if (oneSemiFinalPlayed && firstSemifinalBet) {
     return {
       firstSemifinalBet: !!firstSemifinalBet,
-      secondSemifinalBet: null
+      secondSemifinalBet: null,
     };
   }
 
@@ -129,12 +133,12 @@ const getSemiFinalResults = (
   if (oneSemiFinalPlayed) {
     return {
       firstSemifinalBet: null,
-      secondSemifinalBet
+      secondSemifinalBet,
     };
   }
 
   return {
     firstSemifinalBet,
-    secondSemifinalBet
+    secondSemifinalBet,
   };
 };

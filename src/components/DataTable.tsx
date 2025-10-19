@@ -6,7 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Skeleton from "@mui/material/Skeleton";
-import { GAMBLERS } from "../constants/constants";
+import { GAMBLERS } from "../constants/gamblers";
 import { createRowData } from "./helpers/createRowData";
 import { Row } from "./Row";
 

@@ -2,7 +2,7 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { createRowData } from "./helpers/createRowData";
 import { styled } from "@mui/material/styles";
-import { MATCH_TYPE_TRANSLATION } from "../constants/constants";
+import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {

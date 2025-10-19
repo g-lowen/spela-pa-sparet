@@ -1,0 +1,66 @@
+import { Gambler } from '../types';
+
+export const GAMBLERS: Gambler[] = [
+  {
+    "name": "Gustav",
+    "bets": [
+      {
+        "matchType": "group",
+        "winner": "Ina Lundström & Hanna Hellquist"
+      },
+      {
+        "matchType": "group",
+        "winner": "Anders Eldeman & Christoffer Nyqvist"
+      },
+      {
+        "matchType": "group",
+        "winner": "Ina Lundström & Hanna Hellquist"
+      },
+      {
+        "matchType": "group",
+        "winner": "Julia Frändfors & Oisín Cantwell"
+      },
+      {
+        "matchType": "group",
+        "winner": "Tarik Saleh & Ika Johannesson"
+      },
+      {
+        "matchType": "group",
+        "winner": "Tarik Saleh & Ika Johannesson"
+      },
+      {
+        "matchType": "group",
+        "winner": "Johanna Wagrell & Johan Hurtig"
+      },
+      {
+        "matchType": "group",
+        "winner": "Amie Bramme Sey & Gunnar Bolin"
+      },
+      {
+        "matchType": "group",
+        "winner": "Amie Bramme Sey & Gunnar Bolin"
+      },
+      {
+        "matchType": "group",
+        "winner": "Uje Brandelius & Amy Deasismont"
+      },
+      {
+        "matchType": "group",
+        "winner": "Messiah Hallberg & Sara Wimmercranz"
+      },
+      {
+        "matchType": "group",
+        "winner": "Messiah Hallberg & Sara Wimmercranz"
+      },
+      {
+        "matchType": "semifinal",
+        "semifinalFirst": "Tarik Saleh & Ika Johannesson",
+        "semifinalSecond": "Messiah Hallberg & Sara Wimmercranz"
+      },
+      {
+        "matchType": "final",
+        "winner": "Tarik Saleh & Ika Johannesson"
+      }
+    ]
+  }
+];

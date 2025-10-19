@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
-import { MATCHES } from "./constants/constants";
+import { MATCHES } from "./constants/matches";
 import { CardsContainer } from "./components/CardsContainer";
 
 function App() {
