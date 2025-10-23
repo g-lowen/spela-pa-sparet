@@ -24,12 +24,12 @@ export default function DataTable() {
       <TableContainer
         sx={{
           ...(isSmallScreen && {
-            ["& .MuiTableCell-root"]: {
+            "& .MuiTableCell-root": {
               padding: "6px 2px",
-              ["&:last-of-type:not(:first-of-type)"]: {
+              "&:last-of-type:not(:first-of-type)": {
                 padding: "6px",
               },
-              ["&:first-of-type:not(:first-of-type:has(.MuiCollapse-root))"]: {
+              "&:first-of-type:not(:first-of-type:has(.MuiCollapse-root))": {
                 padding: "6px",
               },
             },
