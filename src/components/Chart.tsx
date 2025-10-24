@@ -1,5 +1,5 @@
 import { PieChart } from "@mui/x-charts/PieChart";
-import { Match } from "../types";
+import { getPalette } from "./helpers/getPalette";
 
 interface ChartProps {
   data:
@@ -10,15 +10,15 @@ interface ChartProps {
         label: (location: "legend" | "tooltip" | "arc") => string;
       }[]
     | null;
-  matchType: Match["matchType"];
 }
 
-export const Chart = ({ data, matchType }: ChartProps) => {
+export const Chart = ({ data }: ChartProps) => {
   if (!data) {
     return null;
   }
   return (
     <PieChart
+      colors={getPalette()}
       slotProps={{
         legend: {
           direction: "horizontal",

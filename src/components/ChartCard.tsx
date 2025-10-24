@@ -30,15 +30,9 @@ export const ChartCard = (props: CardProps) => {
         sx={{ textAlign: "center" }}
         title={`${title} (${match.date})`}
       />
-      {match.matchType === "group" ? (
-        <Chart data={groupData} matchType={match.matchType} />
-      ) : null}
-      {match.matchType === "semifinal" ? (
-        <Chart data={semifinalsData} matchType={match.matchType} />
-      ) : null}
-      {match.matchType === "final" ? (
-        <Chart data={finalsData} matchType={match.matchType} />
-      ) : null}
+      {match.matchType === "group" ? <Chart data={groupData} /> : null}
+      {match.matchType === "semifinal" ? <Chart data={semifinalsData} /> : null}
+      {match.matchType === "final" ? <Chart data={finalsData} /> : null}
     </Card>
   );
 };
@@ -83,7 +77,7 @@ function getGroupData(match: Match, matchIndex: number) {
           default:
             return "";
         }
-      }
+      },
     },
     {
       id: 1,
@@ -99,8 +93,8 @@ function getGroupData(match: Match, matchIndex: number) {
           default:
             return "";
         }
-      }
-    }
+      },
+    },
   ];
 }
 
@@ -108,7 +102,7 @@ function getSemifinalsData() {
   const semifinalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
-      ...gambler.bets.find((bet) => bet.matchType === "semifinal")
+      ...gambler.bets.find((bet) => bet.matchType === "semifinal"),
     };
   });
 
@@ -148,7 +142,7 @@ function getSemifinalsData() {
           default:
             return "";
         }
-      }
+      },
     };
   });
 }
@@ -157,7 +151,7 @@ function getFinalsData() {
   const finalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
-      ...gambler.bets.find((bet) => bet.matchType === "final")
+      ...gambler.bets.find((bet) => bet.matchType === "final"),
     };
   });
 
@@ -189,7 +183,7 @@ function getFinalsData() {
           default:
             return "";
         }
-      }
+      },
     };
   });
 }
