@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
