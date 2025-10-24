@@ -1,4 +1,12 @@
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
 import { GAMBLERS } from "../constants/gamblers";
 import { createRowData } from "./helpers/createRowData";
 import { Row } from "./Row";
@@ -30,7 +38,7 @@ export default function DataTable() {
           }),
         }}
       >
-        <Table aria-label="collapsible table" size="small">
+        <Table aria-label="table" size="small">
           <TableHead>
             <TableRow>
               <TableCell width="20" />
@@ -44,8 +52,8 @@ export default function DataTable() {
           <TableBody>
             {rows
               .sort((a, b) => b.points - a.points)
-              .map((row) => (
-                <Row key={row.name} row={row} />
+              .map((row, index) => (
+                <Row key={row.name} row={row} index={index} />
               ))}
           </TableBody>
         </Table>
