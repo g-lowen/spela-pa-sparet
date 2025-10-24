@@ -1,6 +1,6 @@
-import { MATCHES } from "../../constants/matches";
-import { Gambler, Match } from "../../types";
-import { getTeams } from "./getTeams";
+import { MATCHES } from "../../../constants/matches";
+import { Gambler, Match } from "../../../types";
+import { getTeams } from "./../getTeams";
 
 export function createRowData(gambler: Gambler) {
   const { bets, name } = gambler;

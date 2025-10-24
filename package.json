@@ -5,8 +5,6 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.4",
     "@mui/x-charts": "^8.15.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "@vitejs/plugin-react": "^4.3.3",
     "csv-parse": "^6.1.0",
@@ -23,7 +21,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -49,14 +50,23 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
+    "@vitest/ui": "^4.0.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.11.0",
+    "jsdom": "^27.0.1",
     "prettier": "^3.3.3",
-    "typescript-eslint": "^8.11.0"
+    "typescript-eslint": "^8.11.0",
+    "vitest": "^4.0.2"
+  },
+  "vitest": {
+    "globals": true,
+    "environment": "node"
   },
   "version": "2025.0.0"
 }

@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { createRowData } from "./helpers/createRowData";
+import { createRowData } from "./helpers/create-row-data/createRowData";
 import { CollapseRow } from "./CollapseRow";
 import { useMediaQuery } from "@mui/material";
 import Dialog from "./Dialog";

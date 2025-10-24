@@ -6,9 +6,10 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Typography,
 } from "@mui/material";
 import { GAMBLERS } from "../constants/gamblers";
-import { createRowData } from "./helpers/createRowData";
+import { createRowData } from "./helpers/create-row-data/createRowData";
 import { Row } from "./Row";
 
 import { useMediaQuery } from "@mui/material";
@@ -23,6 +24,16 @@ export default function DataTable() {
         width: "100%",
       }}
     >
+      <Typography
+        variant="body2"
+        sx={{
+          textAlign: "left",
+          padding: "6px",
+          marginBottom: "6px",
+        }}
+      >
+        ℹ️ Klicka på en rad för att se någons bets
+      </Typography>
       <TableContainer
         sx={{
           ...(isSmallScreen && {
