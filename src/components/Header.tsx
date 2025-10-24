@@ -1,7 +1,4 @@
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+import { ToggleButton, ToggleButtonGroup, Tabs, Tab } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
 
 interface HeaderProps {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";

@@ -1,8 +1,7 @@
 import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
 import { GAMBLERS } from "../constants/gamblers";
 import { Match } from "../types";
-import Card, { CardProps as MuiCardProps } from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
+import { Card, CardProps as MuiCardProps, CardHeader } from "@mui/material";
 import { getPercentage } from "./helpers/getPercentage";
 import { Chart } from "./Chart";
 

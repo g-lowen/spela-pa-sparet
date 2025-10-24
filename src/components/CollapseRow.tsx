@@ -1,5 +1,4 @@
-import TableCell from "@mui/material/TableCell";
-import TableRow from "@mui/material/TableRow";
+import { TableCell, TableRow } from "@mui/material";
 import { createRowData } from "./helpers/createRowData";
 import { styled } from "@mui/material/styles";
 import { MATCH_TYPE_TRANSLATION } from "../constants/matches";

@@ -19,31 +19,24 @@ export const Chart = ({ data, matchType }: ChartProps) => {
   }
   return (
     <PieChart
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: matchType === "semifinal" ? 200 : 100,
-        left: 0
-      }}
       slotProps={{
         legend: {
-          direction: "row",
-          position: { vertical: "bottom", horizontal: "left" }
-        }
+          direction: "horizontal",
+          position: { vertical: "bottom", horizontal: "start" },
+        },
       }}
       series={[
         {
-          arcLabel: "label",
           data: data.map((d) => ({
             id: d.id,
             value: d.value,
-            label: d.label
+            label: d.label,
           })),
-          valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters
-        }
+          valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters,
+        },
       ]}
       sx={{ "&&": { touchAction: "auto", userSelect: "none" } }}
-      height={matchType === "semifinal" ? 400 : 300}
+      height={300}
     />
   );
 };

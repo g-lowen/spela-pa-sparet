@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
+import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import { createRowData } from "./helpers/createRowData";
 import { CollapseRow } from "./CollapseRow";
-import Collapse from "@mui/material/Collapse";
-import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { Collapse, Box, useMediaQuery } from "@mui/material";
 
 export function Row(props: { row: ReturnType<typeof createRowData> }) {
   const { row } = props;
