@@ -2,7 +2,6 @@ import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
 import { GAMBLERS } from "../constants/gamblers";
 import { Match } from "../types";
 import { Card, CardProps as MuiCardProps, CardHeader } from "@mui/material";
-import { getPercentage } from "./helpers/getPercentage";
 import { Chart } from "./Chart";
 
 interface CardProps extends MuiCardProps {
@@ -72,8 +71,6 @@ function getGroupData(match: Match, matchIndex: number) {
           case "tooltip":
           case "legend":
             return teams[0] || "";
-          case "arc":
-            return getPercentage(firstClassBetters.length, GAMBLERS.length);
           default:
             return "";
         }
@@ -88,8 +85,6 @@ function getGroupData(match: Match, matchIndex: number) {
           case "tooltip":
           case "legend":
             return teams[1] || "";
-          case "arc":
-            return getPercentage(trolleyBetters.length, GAMBLERS.length);
           default:
             return "";
         }
@@ -137,8 +132,6 @@ function getSemifinalsData() {
           case "tooltip":
           case "legend":
             return team;
-          case "arc":
-            return getPercentage(betters.length, GAMBLERS.length);
           default:
             return "";
         }
@@ -178,8 +171,6 @@ function getFinalsData() {
           case "tooltip":
           case "legend":
             return team;
-          case "arc":
-            return getPercentage(betters.length, GAMBLERS.length);
           default:
             return "";
         }
