@@ -33,7 +33,7 @@ export default function Dialog({
         <Toolbar>
           {playerName}s bets
           <Button color="inherit" onClick={onClose} sx={{ marginLeft: "auto" }}>
-            Stäng
+            Stäng ❌
           </Button>
         </Toolbar>
       </AppBar>
