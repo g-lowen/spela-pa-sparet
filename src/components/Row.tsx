@@ -34,7 +34,15 @@ export function Row(props: {
 
   return (
     <>
-      <TableRow onClick={handleOpen} sx={{ cursor: "pointer" }}>
+      <TableRow
+        onClick={handleOpen}
+        sx={(theme) => ({
+          cursor: "pointer",
+          "&:nth-of-type(odd)": {
+            backgroundColor: theme.palette.action.hover,
+          },
+        })}
+      >
         <TableCell sx={{ maxWidth: "20px" }}>{index + 1}</TableCell>
         <TableCell component="th" scope="row">
           {row.name}
