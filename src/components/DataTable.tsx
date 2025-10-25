@@ -24,16 +24,6 @@ export default function DataTable() {
         width: "100%",
       }}
     >
-      <Typography
-        variant="body2"
-        sx={{
-          textAlign: "left",
-          padding: "6px",
-          marginBottom: "6px",
-        }}
-      >
-        ℹ️ Klicka på en rad för att visa bets
-      </Typography>
       <TableContainer
         sx={{
           ...(isSmallScreen && {
@@ -64,7 +54,7 @@ export default function DataTable() {
             {rows
               .sort((a, b) => b.points - a.points)
               .map((row, index) => (
-                <Row key={row.name} row={row} index={index} />
+                <Row key={row.name} row={row} />
               ))}
           </TableBody>
         </Table>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import {
+  Box,
   Table,
   TableBody,
   TableCell,
@@ -11,12 +12,10 @@ import { createRowData } from "./helpers/create-row-data/createRowData";
 import { CollapseRow } from "./CollapseRow";
 import { useMediaQuery } from "@mui/material";
 import Dialog from "./Dialog";
+import InfoIcon from "../svgs/InfoIcon";
 
-export function Row(props: {
-  row: ReturnType<typeof createRowData>;
-  index: number;
-}) {
-  const { row, index } = props;
+export function Row(props: { row: ReturnType<typeof createRowData> }) {
+  const { row } = props;
   const isLargeScreen = useMediaQuery("(min-width:600px)");
   const [open, setOpen] = useState(false);
 
@@ -43,7 +42,11 @@ export function Row(props: {
           },
         })}
       >
-        <TableCell sx={{ maxWidth: "20px" }}>{index + 1}</TableCell>
+        <TableCell sx={{ maxWidth: "30px" }}>
+          <Box sx={{ display: "flex" }}>
+            <InfoIcon fontSize="small" />
+          </Box>
+        </TableCell>
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
