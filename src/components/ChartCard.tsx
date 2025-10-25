@@ -1,7 +1,12 @@
 import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
 import { GAMBLERS } from "../constants/gamblers";
 import { Match } from "../types";
-import { Card, CardProps as MuiCardProps, CardHeader } from "@mui/material";
+import {
+  Card,
+  CardProps as MuiCardProps,
+  CardHeader,
+  CardContent,
+} from "@mui/material";
 import { Chart } from "./Chart";
 
 interface CardProps extends MuiCardProps {
@@ -29,9 +34,11 @@ export const ChartCard = (props: CardProps) => {
         sx={{ textAlign: "center" }}
         title={`${title} (${match.date})`}
       />
-      {match.matchType === "group" ? <Chart data={groupData} /> : null}
-      {match.matchType === "semifinal" ? <Chart data={semifinalsData} /> : null}
-      {match.matchType === "final" ? <Chart data={finalsData} /> : null}
+      <CardContent>
+        {match.matchType === "group" && <Chart data={groupData} />}
+        {match.matchType === "semifinal" && <Chart data={semifinalsData} />}
+        {match.matchType === "final" && <Chart data={finalsData} />}
+      </CardContent>
     </Card>
   );
 };
