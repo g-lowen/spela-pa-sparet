@@ -26,7 +26,7 @@ function App() {
   );
 
   return (
-    <Box>
+    <Box sx={{ position: "relative" }}>
       <SeasonalEffects />
       <Header onChange={handleChange} tabValue={tabValue} />
       <center style={{ padding: "6px" }}>
