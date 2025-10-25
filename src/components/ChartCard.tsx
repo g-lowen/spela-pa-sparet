@@ -6,8 +6,13 @@ import {
   CardProps as MuiCardProps,
   CardHeader,
   CardContent,
+  IconButton,
 } from "@mui/material";
 import { Chart } from "./Chart";
+
+import InfoIcon from "../svgs/InfoIcon";
+import { InfoDialog } from "./InfoDialog";
+import { useState } from "react";
 
 interface CardProps extends MuiCardProps {
   matchIndex?: number;
@@ -16,30 +21,72 @@ interface CardProps extends MuiCardProps {
 
 export const ChartCard = (props: CardProps) => {
   const { match, matchIndex, ...rest } = props;
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   if (!match || matchIndex === undefined) {
     return null;
   }
 
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
+
+  const handleOpenDialog = () => {
+    setDialogOpen(true);
+  };
+
   const groupData = getGroupData(match, matchIndex);
   const semifinalsData = getSemifinalsData();
   const finalsData = getFinalsData();
+  console.log({ match, groupData });
   const title =
     MATCH_TYPE_TRANSLATION[match.matchType] === "Gruppspel"
       ? `Avsnitt ${matchIndex + 1}`
       : MATCH_TYPE_TRANSLATION[match.matchType];
 
   return (
-    <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...rest}>
-      <CardHeader
-        sx={{ textAlign: "center" }}
-        title={`${title} (${match.date})`}
-      />
-      <CardContent>
-        {match.matchType === "group" && <Chart data={groupData} />}
-        {match.matchType === "semifinal" && <Chart data={semifinalsData} />}
-        {match.matchType === "final" && <Chart data={finalsData} />}
-      </CardContent>
-    </Card>
+    <>
+      <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...rest}>
+        <CardHeader
+          action={
+            <IconButton onClick={handleOpenDialog} aria-label="info">
+              <InfoIcon />
+            </IconButton>
+          }
+          sx={{ textAlign: "center" }}
+          title={`${title} (${match.date})`}
+        />
+        <CardContent>
+          {match.matchType === "group" && <Chart data={groupData} />}
+          {match.matchType === "semifinal" && <Chart data={semifinalsData} />}
+          {match.matchType === "final" && <Chart data={finalsData} />}
+        </CardContent>
+      </Card>
+      {match.matchType === "group" && (
+        <InfoDialog
+          open={dialogOpen}
+          onClose={handleCloseDialog}
+          data={groupData}
+          title={title}
+        />
+      )}
+      {match.matchType === "semifinal" && (
+        <InfoDialog
+          open={dialogOpen}
+          onClose={handleCloseDialog}
+          data={semifinalsData}
+          title={title}
+        />
+      )}
+      {match.matchType === "final" && (
+        <InfoDialog
+          open={dialogOpen}
+          onClose={handleCloseDialog}
+          data={finalsData}
+          title={title}
+        />
+      )}
+    </>
   );
 };
 
@@ -70,7 +117,7 @@ function getGroupData(match: Match, matchIndex: number) {
 
   return [
     {
-      id: 0,
+      id: teams[0],
       betters: firstClassBetters.join(", "),
       value: firstClassBetters.length,
       label: (location: "legend" | "tooltip" | "arc") => {
@@ -84,7 +131,7 @@ function getGroupData(match: Match, matchIndex: number) {
       },
     },
     {
-      id: 1,
+      id: teams[1],
       betters: trolleyBetters.join(", "),
       value: trolleyBetters.length,
       label: (location: "legend" | "tooltip" | "arc") => {

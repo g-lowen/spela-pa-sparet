@@ -1,0 +1,60 @@
+import Button from "@mui/material/Button";
+import MuiDialog from "@mui/material/Dialog";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
+import type { ReactElement } from "react";
+import { List, ListItem, ListItemText } from "@mui/material";
+
+interface InfoDialogProps {
+  open: boolean;
+  onClose: () => void;
+  data:
+    | {
+        id: number | string;
+        betters: string;
+        value: number;
+        label: (location: "legend" | "tooltip" | "arc") => string;
+      }[]
+    | null;
+  title: string;
+}
+
+export const InfoDialog = ({ open, onClose, data, title }: InfoDialogProps) => {
+  return (
+    <MuiDialog open={open} onClose={onClose}>
+      <AppBar sx={{ position: "sticky" }}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          {title}
+          <Button color="inherit" onClick={onClose}>
+            Stäng ❌
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <List>
+        {data?.map((item) => (
+          <ListItem key={item.id}>
+            <ListItemText
+              primary={item.label("tooltip")}
+              secondary={`Bettare: ${item.betters}`}
+            />
+          </ListItem>
+        ))}
+      </List>
+    </MuiDialog>
+  );
+};
+
+const exampleData = [
+  {
+    id: "Anders Eldeman & Christoffer Nyqvist",
+    betters: "Irma, Markus E",
+    value: 2,
+  },
+  {
+    id: "Ina Lundström & Hanna Hellquist",
+    betters:
+      "Gustav, Selma, Fanni och bullmannen, Fabian, O-sKaR, Elin, Valle G",
+    value: 7,
+  },
+];

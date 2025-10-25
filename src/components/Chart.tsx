@@ -24,6 +24,9 @@ export const Chart = ({ data }: ChartProps) => {
           direction: "horizontal",
           position: { vertical: "bottom", horizontal: "start" },
         },
+        tooltip: {
+          trigger: "none",
+        },
       }}
       series={[
         {
@@ -35,7 +38,11 @@ export const Chart = ({ data }: ChartProps) => {
           valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters,
         },
       ]}
-      sx={{ "&&": { touchAction: "auto", userSelect: "none" } }}
+      sx={{
+        "&&": {
+          pointerEvents: "none",
+        },
+      }}
       height={300}
     />
   );
