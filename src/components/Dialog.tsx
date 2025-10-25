@@ -29,7 +29,7 @@ export default function Dialog({
         transition: Transition,
       }}
     >
-      <AppBar sx={{ position: "sticky" }}>
+      <AppBar color="inherit" sx={{ position: "sticky" }}>
         <Toolbar>
           {playerName}s bets
           <Button color="inherit" onClick={onClose} sx={{ marginLeft: "auto" }}>

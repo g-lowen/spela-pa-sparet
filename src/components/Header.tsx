@@ -17,7 +17,7 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
   const { mode, setMode } = useColorScheme();
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" color="inherit">
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Tabs
           value={tabValue}
