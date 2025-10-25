@@ -8,7 +8,7 @@ export const MATCHES: Match[] = [
       "Anders Eldeman & Christoffer Nyqvist",
       "Ina Lundström & Hanna Hellquist",
     ],
-    winner: null,
+    winner: "Ina Lundström & Hanna Hellquist",
   },
   {
     date: "31 oktober",
