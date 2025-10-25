@@ -32,7 +32,7 @@ export default function DataTable() {
           marginBottom: "6px",
         }}
       >
-        ℹ️ Klicka på en rad för att se någons bets
+        ℹ️ Klicka på en rad för att visa bets
       </Typography>
       <TableContainer
         sx={{

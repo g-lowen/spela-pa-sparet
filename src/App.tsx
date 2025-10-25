@@ -27,7 +27,6 @@ function App() {
   return (
     <Box>
       <Header onChange={handleChange} tabValue={tabValue} />
-
       <center style={{ padding: "6px" }}>
         <TabPanel value={tabValue} index={0}>
           {upcomingMatch ? (
