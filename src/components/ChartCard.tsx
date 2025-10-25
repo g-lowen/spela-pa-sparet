@@ -1,8 +1,7 @@
-import { GAMBLERS, MATCH_TYPE_TRANSLATION } from "../constants/constants";
+import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
+import { GAMBLERS } from "../constants/gamblers";
 import { Match } from "../types";
-import Card, { CardProps as MuiCardProps } from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import { getPercentage } from "./helpers/getPercentage";
+import { Card, CardProps as MuiCardProps, CardHeader } from "@mui/material";
 import { Chart } from "./Chart";
 
 interface CardProps extends MuiCardProps {
@@ -30,15 +29,9 @@ export const ChartCard = (props: CardProps) => {
         sx={{ textAlign: "center" }}
         title={`${title} (${match.date})`}
       />
-      {match.matchType === "group" ? (
-        <Chart data={groupData} matchType={match.matchType} />
-      ) : null}
-      {match.matchType === "semifinal" ? (
-        <Chart data={semifinalsData} matchType={match.matchType} />
-      ) : null}
-      {match.matchType === "final" ? (
-        <Chart data={finalsData} matchType={match.matchType} />
-      ) : null}
+      {match.matchType === "group" ? <Chart data={groupData} /> : null}
+      {match.matchType === "semifinal" ? <Chart data={semifinalsData} /> : null}
+      {match.matchType === "final" ? <Chart data={finalsData} /> : null}
     </Card>
   );
 };
@@ -78,12 +71,10 @@ function getGroupData(match: Match, matchIndex: number) {
           case "tooltip":
           case "legend":
             return teams[0] || "";
-          case "arc":
-            return getPercentage(firstClassBetters.length, GAMBLERS.length);
           default:
             return "";
         }
-      }
+      },
     },
     {
       id: 1,
@@ -94,13 +85,11 @@ function getGroupData(match: Match, matchIndex: number) {
           case "tooltip":
           case "legend":
             return teams[1] || "";
-          case "arc":
-            return getPercentage(trolleyBetters.length, GAMBLERS.length);
           default:
             return "";
         }
-      }
-    }
+      },
+    },
   ];
 }
 
@@ -108,7 +97,7 @@ function getSemifinalsData() {
   const semifinalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
-      ...gambler.bets.find((bet) => bet.matchType === "semifinal")
+      ...gambler.bets.find((bet) => bet.matchType === "semifinal"),
     };
   });
 
@@ -143,12 +132,10 @@ function getSemifinalsData() {
           case "tooltip":
           case "legend":
             return team;
-          case "arc":
-            return getPercentage(betters.length, GAMBLERS.length);
           default:
             return "";
         }
-      }
+      },
     };
   });
 }
@@ -157,7 +144,7 @@ function getFinalsData() {
   const finalBets = GAMBLERS.map((gambler) => {
     return {
       gamblerName: gambler.name,
-      ...gambler.bets.find((bet) => bet.matchType === "final")
+      ...gambler.bets.find((bet) => bet.matchType === "final"),
     };
   });
 
@@ -184,12 +171,10 @@ function getFinalsData() {
           case "tooltip":
           case "legend":
             return team;
-          case "arc":
-            return getPercentage(betters.length, GAMBLERS.length);
           default:
             return "";
         }
-      }
+      },
     };
   });
 }

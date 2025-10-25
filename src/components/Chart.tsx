@@ -1,5 +1,5 @@
 import { PieChart } from "@mui/x-charts/PieChart";
-import { Match } from "../types";
+import { getPalette } from "./helpers/getPalette";
 
 interface ChartProps {
   data:
@@ -10,40 +10,33 @@ interface ChartProps {
         label: (location: "legend" | "tooltip" | "arc") => string;
       }[]
     | null;
-  matchType: Match["matchType"];
 }
 
-export const Chart = ({ data, matchType }: ChartProps) => {
+export const Chart = ({ data }: ChartProps) => {
   if (!data) {
     return null;
   }
   return (
     <PieChart
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: matchType === "semifinal" ? 200 : 100,
-        left: 0
-      }}
+      colors={getPalette()}
       slotProps={{
         legend: {
-          direction: "row",
-          position: { vertical: "bottom", horizontal: "left" }
-        }
+          direction: "horizontal",
+          position: { vertical: "bottom", horizontal: "start" },
+        },
       }}
       series={[
         {
-          arcLabel: "label",
           data: data.map((d) => ({
             id: d.id,
             value: d.value,
-            label: d.label
+            label: d.label,
           })),
-          valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters
-        }
+          valueFormatter: (_value, { dataIndex }) => data[dataIndex].betters,
+        },
       ]}
       sx={{ "&&": { touchAction: "auto", userSelect: "none" } }}
-      height={matchType === "semifinal" ? 400 : 300}
+      height={300}
     />
   );
 };

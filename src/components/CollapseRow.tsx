@@ -1,40 +1,39 @@
-import TableCell from "@mui/material/TableCell";
-import TableRow from "@mui/material/TableRow";
-import { createRowData } from "./helpers/createRowData";
+import { TableCell, TableRow } from "@mui/material";
+import { createRowData } from "./helpers/create-row-data/createRowData";
 import { styled } from "@mui/material/styles";
-import { MATCH_TYPE_TRANSLATION } from "../constants/constants";
+import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover
-  }
+    backgroundColor: theme.palette.action.hover,
+  },
 }));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   "&.guess": {
     color: theme.palette.warning.dark,
     ...theme.applyStyles("dark", {
-      color: theme.palette.warning.light
-    })
+      color: theme.palette.warning.light,
+    }),
   },
   "&.correct": {
     color: theme.palette.success.dark,
     ...theme.applyStyles("dark", {
-      color: theme.palette.success.light
-    })
+      color: theme.palette.success.light,
+    }),
   },
   "&.wrong": {
     color: theme.palette.error.dark,
     ...theme.applyStyles("dark", {
-      color: theme.palette.error.light
-    })
-  }
+      color: theme.palette.error.light,
+    }),
+  },
 }));
 
 export const CollapseRow = ({
   betResult,
   index,
-  isLargeScreen
+  isLargeScreen,
 }: {
   betResult: ReturnType<typeof createRowData>["betResults"][0];
   index: number;

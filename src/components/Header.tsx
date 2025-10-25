@@ -1,19 +1,32 @@
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { ToggleButton, ToggleButtonGroup, Tabs, Tab } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
 
-export const Header = () => {
+interface HeaderProps {
+  onChange: (_event: React.SyntheticEvent, newValue: number) => void;
+  tabValue: number;
+}
+
+export const Header = ({ onChange, tabValue }: HeaderProps) => {
   const { mode, setMode } = useColorScheme();
 
   return (
     <header
       style={{
         display: "flex",
-        justifyContent: "right",
+        justifyContent: "space-between",
         padding: "6px",
-        paddingBottom: "0px"
+        paddingBottom: "0px",
       }}
     >
+      <Tabs
+        value={tabValue}
+        onChange={onChange}
+        aria-label="tabs"
+        variant="fullWidth"
+      >
+        <Tab label="Diagram" {...a11yProps(0)} />
+        <Tab label="Tabell" {...a11yProps(1)} />
+      </Tabs>
       <ToggleButtonGroup
         size="small"
         exclusive
@@ -32,3 +45,10 @@ export const Header = () => {
     </header>
   );
 };
+
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
