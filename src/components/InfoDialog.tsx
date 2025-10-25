@@ -2,8 +2,6 @@ import Button from "@mui/material/Button";
 import MuiDialog from "@mui/material/Dialog";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
-import type { ReactElement } from "react";
 import { List, ListItem, ListItemText } from "@mui/material";
 
 interface InfoDialogProps {
@@ -23,7 +21,7 @@ interface InfoDialogProps {
 export const InfoDialog = ({ open, onClose, data, title }: InfoDialogProps) => {
   return (
     <MuiDialog open={open} onClose={onClose}>
-      <AppBar sx={{ position: "sticky" }}>
+      <AppBar sx={{ position: "sticky" }} color="inherit">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {title}
           <Button color="inherit" onClick={onClose}>

@@ -7,6 +7,7 @@ import { Header } from "./components/Header";
 import { MATCHES } from "./constants/matches";
 import { CardsContainer } from "./components/CardsContainer";
 import { TabPanel } from "./components/TabPanel";
+import { SeasonalEffects } from "./components/seasonal/SeasonalEffects";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <Box>
+      <SeasonalEffects />
       <Header onChange={handleChange} tabValue={tabValue} />
       <center style={{ padding: "6px" }}>
         <TabPanel value={tabValue} index={0}>
