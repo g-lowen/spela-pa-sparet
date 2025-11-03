@@ -38,7 +38,6 @@ export const ChartCard = (props: CardProps) => {
   const groupData = getGroupData(match, matchIndex);
   const semifinalsData = getSemifinalsData();
   const finalsData = getFinalsData();
-  console.log({ match, groupData });
   const title =
     MATCH_TYPE_TRANSLATION[match.matchType] === "Gruppspel"
       ? `Avsnitt ${matchIndex + 1}`
