@@ -13,18 +13,18 @@ export const getPalette = (): string[] | undefined => {
   const month = today.getMonth(); // 0-11 (0=Jan, 11=Dec)
   const day = today.getDate();
 
-  // Halloween: October 1 - November 15
-  if (month === 9 || (month === 10 && day <= 15)) {
+  // Halloween: October 1 - November 7
+  if (month === 9 || (month === 10 && day <= 7)) {
     return HALLOWEEN_PALETTE;
   }
 
-  // Late Autumn: November 16 - December 11
-  if ((month === 10 && day >= 16) || (month === 11 && day <= 11)) {
+  // Late Autumn: November 8 - December 11
+  if ((month === 10 && day >= 8) || (month === 11 && day <= 11)) {
     return LATE_AUTUMN_PALETTE;
   }
 
-  // Christmas: December 12 - January 6
-  if ((month === 11 && day >= 12) || (month === 0 && day <= 6)) {
+  // Christmas: December 4 - January 6
+  if ((month === 11 && day >= 4) || (month === 0 && day <= 6)) {
     return CHRISTMAS_PALETTE;
   }
 

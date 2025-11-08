@@ -42,17 +42,3 @@ export const InfoDialog = ({ open, onClose, data, title }: InfoDialogProps) => {
     </MuiDialog>
   );
 };
-
-const exampleData = [
-  {
-    id: "Anders Eldeman & Christoffer Nyqvist",
-    betters: "Irma, Markus E",
-    value: 2,
-  },
-  {
-    id: "Ina Lundström & Hanna Hellquist",
-    betters:
-      "Gustav, Selma, Fanni och bullmannen, Fabian, O-sKaR, Elin, Valle G",
-    value: 7,
-  },
-];

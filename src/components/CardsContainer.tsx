@@ -5,11 +5,11 @@ export const CardsContainer = (props: BoxProps) => {
     <Box
       sx={{
         display: "flex",
-        gap: "2px",
+        gap: "4px",
         maxWidth: "960px",
         overflowX: "auto",
         paddingBottom: "5px",
-        scrollSnapType: "x mandatory"
+        scrollSnapType: "x mandatory",
       }}
       {...props}
     />

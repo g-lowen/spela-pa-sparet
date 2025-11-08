@@ -6,7 +6,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Typography,
 } from "@mui/material";
 import { GAMBLERS } from "../constants/gamblers";
 import { createRowData } from "./helpers/create-row-data/createRowData";
