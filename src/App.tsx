@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
 import { MATCHES } from "./constants/matches";
-import { CardsContainer } from "./components/CardsContainer";
+import { Carousel } from "./components/Carousel";
 import { TabPanel } from "./components/TabPanel";
 import { SeasonalEffects } from "./components/seasonal/SeasonalEffects";
 
@@ -41,36 +41,41 @@ function App() {
               />
             </>
           ) : null}
+          <Divider sx={{ marginTop: "12px" }} />
           <h2>Första gruppen</h2>
-          <CardsContainer>
+          <Carousel>
             {groupOne.map((match, index) => (
               <ChartCard key={index} match={match} matchIndex={index} />
             ))}
-          </CardsContainer>
+          </Carousel>
+          <Divider sx={{ marginTop: "44px" }} />
           <h2>Andra gruppen</h2>
-          <CardsContainer>
+          <Carousel>
             {groupTwo.map((match, index) => (
               <ChartCard key={index} match={match} matchIndex={index + 3} />
             ))}
-          </CardsContainer>
+          </Carousel>
+          <Divider sx={{ marginTop: "44px" }} />
           <h2>Tredje gruppen</h2>
-          <CardsContainer>
+          <Carousel>
             {groupThree.map((match, index) => (
               <ChartCard key={index} match={match} matchIndex={index + 6} />
             ))}
-          </CardsContainer>
+          </Carousel>
+          <Divider sx={{ marginTop: "44px" }} />
           <h2>Fjärde gruppen</h2>
-          <CardsContainer>
+          <Carousel>
             {groupFour.map((match, index) => (
               <ChartCard key={index} match={match} matchIndex={index + 9} />
             ))}
-          </CardsContainer>
+          </Carousel>
+          <Divider sx={{ marginTop: "44px" }} />
           <h2>Slutspel</h2>
-          <CardsContainer>
+          <Carousel>
             {playoff.map((match, index) => (
               <ChartCard key={index} match={match} matchIndex={index + 12} />
             ))}
-          </CardsContainer>
+          </Carousel>
         </TabPanel>
         <TabPanel value={tabValue} index={1}>
           <DataTable />

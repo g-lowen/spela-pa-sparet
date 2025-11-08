@@ -7,12 +7,15 @@ import {
   CardHeader,
   CardContent,
   IconButton,
+  useTheme,
 } from "@mui/material";
 import { Chart } from "./Chart";
 
 import InfoIcon from "../svgs/InfoIcon";
 import { InfoDialog } from "./InfoDialog";
 import { useState } from "react";
+import { getPalette } from "./helpers/getPalette";
+import { HALLOWEEN_PALETTE } from "../constants/palette";
 
 interface CardProps extends MuiCardProps {
   matchIndex?: number;
@@ -22,6 +25,7 @@ interface CardProps extends MuiCardProps {
 export const ChartCard = (props: CardProps) => {
   const { match, matchIndex, ...rest } = props;
   const [dialogOpen, setDialogOpen] = useState(false);
+  const theme = useTheme();
 
   if (!match || matchIndex === undefined) {
     return null;
@@ -45,7 +49,23 @@ export const ChartCard = (props: CardProps) => {
 
   return (
     <>
-      <Card sx={{ flex: "0 0 355px", scrollSnapAlign: "start" }} {...rest}>
+      <Card
+        sx={{
+          flex: "0 0 355px",
+          scrollSnapAlign: "start",
+          "&::scroll-marker": {
+            content: '" "',
+            backgroundColor: theme.palette.grey["800"],
+            borderRadius: "50%",
+            height: "1em",
+            width: "1em",
+          },
+          "&::scroll-marker:target-current": {
+            backgroundColor: getPalette()?.[0] || HALLOWEEN_PALETTE[0],
+          },
+        }}
+        {...rest}
+      >
         <CardHeader
           action={
             <IconButton onClick={handleOpenDialog} aria-label="info">

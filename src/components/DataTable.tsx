@@ -53,7 +53,7 @@ export default function DataTable() {
           <TableBody>
             {rows
               .sort((a, b) => b.points - a.points)
-              .map((row, index) => (
+              .map((row) => (
                 <Row key={row.name} row={row} />
               ))}
           </TableBody>
