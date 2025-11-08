@@ -26,7 +26,7 @@ export const MATCHES: Match[] = [
       "Jonas Dahlquist & Marie Lehmann",
       "Ina Lundström & Hanna Hellquist",
     ],
-    winner: null,
+    winner: "Jonas Dahlquist & Marie Lehmann",
   },
   {
     date: "14 november",
