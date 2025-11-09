@@ -5,9 +5,9 @@ import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
 import { MATCHES } from "./constants/matches";
-import { Carousel } from "./components/Carousel";
 import { TabPanel } from "./components/TabPanel";
 import { SeasonalEffects } from "./components/seasonal/SeasonalEffects";
+import { Carousel } from "./components/Carousel";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -29,7 +29,7 @@ function App() {
     <Box sx={{ position: "relative" }}>
       <SeasonalEffects />
       <Header onChange={handleChange} tabValue={tabValue} />
-      <center style={{ padding: "6px" }}>
+      <center style={{ paddingBottom: "16px" }}>
         <TabPanel value={tabValue} index={0}>
           {upcomingMatch ? (
             <>
@@ -37,45 +37,24 @@ function App() {
               <ChartCard
                 match={upcomingMatch}
                 matchIndex={upcomingMatch && MATCHES.indexOf(upcomingMatch)}
-                sx={{ maxWidth: "355px" }}
               />
             </>
           ) : null}
-          <Divider sx={{ marginTop: "12px" }} />
+          <Divider sx={{ marginTop: "16px" }} />
           <h2>Första gruppen</h2>
-          <Carousel>
-            {groupOne.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index} />
-            ))}
-          </Carousel>
-          <Divider sx={{ marginTop: "44px" }} />
+          <Carousel matches={groupOne} groupStartIndex={0} />
+          <Divider sx={{ marginTop: "16px" }} />
           <h2>Andra gruppen</h2>
-          <Carousel>
-            {groupTwo.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 3} />
-            ))}
-          </Carousel>
-          <Divider sx={{ marginTop: "44px" }} />
+          <Carousel matches={groupTwo} groupStartIndex={3} />
+          <Divider sx={{ marginTop: "16px" }} />
           <h2>Tredje gruppen</h2>
-          <Carousel>
-            {groupThree.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 6} />
-            ))}
-          </Carousel>
-          <Divider sx={{ marginTop: "44px" }} />
+          <Carousel matches={groupThree} groupStartIndex={6} />
+          <Divider sx={{ marginTop: "16px" }} />
           <h2>Fjärde gruppen</h2>
-          <Carousel>
-            {groupFour.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 9} />
-            ))}
-          </Carousel>
-          <Divider sx={{ marginTop: "44px" }} />
+          <Carousel matches={groupFour} groupStartIndex={9} />
+          <Divider sx={{ marginTop: "16px" }} />
           <h2>Slutspel</h2>
-          <Carousel>
-            {playoff.map((match, index) => (
-              <ChartCard key={index} match={match} matchIndex={index + 12} />
-            ))}
-          </Carousel>
+          <Carousel matches={playoff} groupStartIndex={12} />
         </TabPanel>
         <TabPanel value={tabValue} index={1}>
           <DataTable />

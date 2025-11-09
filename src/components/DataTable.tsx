@@ -21,7 +21,6 @@ export default function DataTable() {
       sx={{
         maxWidth: "960px",
         width: "100%",
-        height: "100vh",
       }}
     >
       <TableContainer

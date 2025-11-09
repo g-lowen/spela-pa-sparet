@@ -51,7 +51,7 @@ export const ChartCard = (props: CardProps) => {
     <>
       <Card
         sx={{
-          flex: "0 0 355px",
+          width: "355px",
           scrollSnapAlign: "start",
           "&::scroll-marker": {
             content: '" "',

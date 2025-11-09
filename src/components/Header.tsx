@@ -24,6 +24,8 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
           onChange={onChange}
           aria-label="tabs"
           variant="fullWidth"
+          indicatorColor="secondary"
+          textColor="secondary"
         >
           <Tab label="Diagram" {...a11yProps(0)} />
           <Tab label="Tabell" {...a11yProps(1)} />
