@@ -21,7 +21,11 @@ export const Carousel = ({
       {matches.map(
         (match, index) =>
           index + 1 === currentIndex && (
-            <ChartCard match={match} matchIndex={index + groupStartIndex} />
+            <ChartCard
+              key={index}
+              match={match}
+              matchIndex={index + groupStartIndex}
+            />
           )
       )}
       <Pagination
