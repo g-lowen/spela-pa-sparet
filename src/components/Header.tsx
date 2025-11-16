@@ -31,15 +31,18 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
           <Tab label="Tabell" {...a11yProps(1)} />
         </Tabs>
         <ToggleButtonGroup
-          size="small"
+          size="medium"
           exclusive
-          onChange={(_event, newMode: "light" | "dark") => {
+          onChange={(_event, newMode: "light" | "dark" | "system") => {
             setMode(newMode);
           }}
           value={mode}
         >
           <ToggleButton value="dark" disabled={mode === "dark"}>
             🌙
+          </ToggleButton>
+          <ToggleButton value="system" disabled={mode === "system"}>
+            ⚙️
           </ToggleButton>
           <ToggleButton value="light" disabled={mode === "light"}>
             ☀️

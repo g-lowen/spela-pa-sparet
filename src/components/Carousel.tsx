@@ -31,8 +31,9 @@ export const Carousel = ({
       <Pagination
         color="primary"
         count={matches.length}
-        page={currentIndex}
         onChange={handleChange}
+        page={currentIndex}
+        size="large"
       />
     </Stack>
   );
