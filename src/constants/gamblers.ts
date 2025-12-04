@@ -84,11 +84,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Tarik Saleh & Ika Johannesson",
       },
       {
         matchType: "group",
-        winner: "Tarik Saleh & Ika Johannesson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",
@@ -146,11 +146,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Marianne Ahrne & Anders Ankan Johansson",
       },
       {
         matchType: "group",
-        winner: "Marianne Ahrne & Anders Ankan Johansson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",
@@ -270,11 +270,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Marianne Ahrne & Anders Ankan Johansson",
       },
       {
         matchType: "group",
-        winner: "Marianne Ahrne & Anders Ankan Johansson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",
@@ -332,11 +332,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Marianne Ahrne & Anders Ankan Johansson",
       },
       {
         matchType: "group",
-        winner: "Marianne Ahrne & Anders Ankan Johansson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",
@@ -456,11 +456,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Tarik Saleh & Ika Johannesson",
       },
       {
         matchType: "group",
-        winner: "Tarik Saleh & Ika Johannesson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",
@@ -518,11 +518,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Julia Frändfors & Oisín Cantwell",
+        winner: "Marianne Ahrne & Anders Ankan Johansson",
       },
       {
         matchType: "group",
-        winner: "Marianne Ahrne & Anders Ankan Johansson",
+        winner: "Julia Frändfors & Oisín Cantwell",
       },
       {
         matchType: "group",

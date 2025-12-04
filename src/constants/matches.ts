@@ -42,18 +42,19 @@ export const MATCHES: Match[] = [
     matchType: "group",
     teams: [
       "Tarik Saleh & Ika Johannesson",
-      "Julia Frändfors & Oisín Cantwell",
+      "Marianne Ahrne & Anders Ankan Johansson",
     ],
-    winner: null,
+
+    winner: "Marianne Ahrne & Anders Ankan Johansson",
   },
   {
     date: "28 november",
     matchType: "group",
     teams: [
       "Tarik Saleh & Ika Johannesson",
-      "Marianne Ahrne & Anders Ankan Johansson",
+      "Julia Frändfors & Oisín Cantwell",
     ],
-    winner: null,
+    winner: "Tarik Saleh & Ika Johannesson",
   },
   {
     date: "5 december",
