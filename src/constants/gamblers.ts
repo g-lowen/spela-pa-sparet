@@ -96,11 +96,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Amie Bramme Sey & Gunnar Bolin",
+        winner: "Sofia Dalén & Kalle Möller",
       },
       {
         matchType: "group",
-        winner: "Sofia Dalén & Kalle Möller",
+        winner: "Amie Bramme Sey & Gunnar Bolin",
       },
       {
         matchType: "group",
@@ -158,11 +158,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Amie Bramme Sey & Gunnar Bolin",
+        winner: "Sofia Dalén & Kalle Möller",
       },
       {
         matchType: "group",
-        winner: "Sofia Dalén & Kalle Möller",
+        winner: "Amie Bramme Sey & Gunnar Bolin",
       },
       {
         matchType: "group",

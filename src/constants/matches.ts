@@ -60,18 +60,18 @@ export const MATCHES: Match[] = [
     date: "5 december",
     matchType: "group",
     teams: ["Johanna Wagrell & Johan Hurtig", "Sofia Dalén & Kalle Möller"],
-    winner: null,
+    winner: "Johanna Wagrell & Johan Hurtig",
   },
   {
     date: "12 december",
     matchType: "group",
-    teams: ["Amie Bramme Sey & Gunnar Bolin", "Johanna Wagrell & Johan Hurtig"],
+    teams: ["Amie Bramme Sey & Gunnar Bolin", "Sofia Dalén & Kalle Möller"],
     winner: null,
   },
   {
     date: "19 december",
     matchType: "group",
-    teams: ["Amie Bramme Sey & Gunnar Bolin", "Sofia Dalén & Kalle Möller"],
+    teams: ["Amie Bramme Sey & Gunnar Bolin", "Johanna Wagrell & Johan Hurtig"],
     winner: null,
   },
   {
