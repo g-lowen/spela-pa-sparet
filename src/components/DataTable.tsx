@@ -19,6 +19,7 @@ export default function DataTable() {
   return (
     <Paper
       sx={{
+        marginTop: "16px",
         maxWidth: "960px",
         width: "100%",
       }}

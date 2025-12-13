@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Box, Divider } from "@mui/material";
+import { Box, Divider, useTheme } from "@mui/material";
 import { ChartCard } from "./components/ChartCard";
 import DataTable from "./components/DataTable";
 import { Header } from "./components/Header";
@@ -8,9 +8,12 @@ import { MATCHES } from "./constants/matches";
 import { TabPanel } from "./components/TabPanel";
 import { SeasonalEffects } from "./components/seasonal/SeasonalEffects";
 import { Carousel } from "./components/Carousel";
+import { isChristmas } from "./components/seasonal/functions/seasonal";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
+  const theme = useTheme();
+  const isWinter = isChristmas();
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
@@ -26,7 +29,18 @@ function App() {
   );
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        ...(isWinter && {
+          background:
+            theme.palette.mode === "dark"
+              ? "linear-gradient(to bottom, #0a1929 0%, #1a1a2e 50%, #0a1929 100%)"
+              : "linear-gradient(to bottom, #e3f2fd 0%, #f5f5f5 50%, #e1f5fe 100%)",
+        }),
+      }}
+    >
       <SeasonalEffects />
       <Header onChange={handleChange} tabValue={tabValue} />
       <center style={{ paddingBottom: "16px" }}>

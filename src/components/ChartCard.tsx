@@ -16,6 +16,7 @@ import { InfoDialog } from "./InfoDialog";
 import { useState } from "react";
 import { getPalette } from "./helpers/getPalette";
 import { HALLOWEEN_PALETTE } from "../constants/palette";
+import { isChristmas } from "./seasonal/functions/seasonal";
 
 interface CardProps extends MuiCardProps {
   matchIndex?: number;
@@ -26,6 +27,7 @@ export const ChartCard = (props: CardProps) => {
   const { match, matchIndex, ...rest } = props;
   const [dialogOpen, setDialogOpen] = useState(false);
   const theme = useTheme();
+  const isWinter = isChristmas();
 
   if (!match || matchIndex === undefined) {
     return null;
@@ -63,6 +65,16 @@ export const ChartCard = (props: CardProps) => {
           "&::scroll-marker:target-current": {
             backgroundColor: getPalette()?.[0] || HALLOWEEN_PALETTE[0],
           },
+          ...(isWinter && {
+            border:
+              theme.palette.mode === "dark"
+                ? "2px solid rgba(144, 202, 249, 0.3)"
+                : "2px solid rgba(100, 181, 246, 0.4)",
+            boxShadow:
+              theme.palette.mode === "dark"
+                ? "0 4px 20px rgba(100, 200, 255, 0.2), inset 0 0 20px rgba(144, 202, 249, 0.1)"
+                : "0 4px 20px rgba(100, 181, 246, 0.3), inset 0 0 20px rgba(144, 202, 249, 0.15)",
+          }),
         }}
         {...rest}
       >
