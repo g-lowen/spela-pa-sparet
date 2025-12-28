@@ -81,14 +81,14 @@ export const MATCHES: Match[] = [
       "Kirsty Armstrong & Hanna Lublin Niklasson",
       "Uje Brandelius & Amy Deasismont",
     ],
-    winner: null,
+    winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
     date: "2 januari",
     matchType: "group",
     teams: [
       "Messiah Hallberg & Sara Wimmercranz",
-      "Kirsty Armstrong & Hanna Lublin Niklasson",
+      "Uje Brandelius & Amy Deasismont",
     ],
     winner: null,
   },
@@ -97,7 +97,7 @@ export const MATCHES: Match[] = [
     matchType: "group",
     teams: [
       "Messiah Hallberg & Sara Wimmercranz",
-      "Uje Brandelius & Amy Deasismont",
+      "Kirsty Armstrong & Hanna Lublin Niklasson",
     ],
     winner: null,
   },

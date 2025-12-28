@@ -108,11 +108,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Messiah Hallberg & Sara Wimmercranz",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Messiah Hallberg & Sara Wimmercranz",
       },
       {
         matchType: "semifinal",
@@ -170,11 +170,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Messiah Hallberg & Sara Wimmercranz",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Messiah Hallberg & Sara Wimmercranz",
       },
       {
         matchType: "semifinal",
@@ -232,11 +232,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Messiah Hallberg & Sara Wimmercranz",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Messiah Hallberg & Sara Wimmercranz",
       },
       {
         matchType: "semifinal",
@@ -294,11 +294,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Messiah Hallberg & Sara Wimmercranz",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Messiah Hallberg & Sara Wimmercranz",
       },
       {
         matchType: "semifinal",
@@ -356,11 +356,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Messiah Hallberg & Sara Wimmercranz",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Messiah Hallberg & Sara Wimmercranz",
       },
       {
         matchType: "semifinal",
@@ -542,11 +542,11 @@ export const GAMBLERS: Gambler[] = [
       },
       {
         matchType: "group",
-        winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
+        winner: "Uje Brandelius & Amy Deasismont",
       },
       {
         matchType: "group",
-        winner: "Uje Brandelius & Amy Deasismont",
+        winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
       },
       {
         matchType: "semifinal",
