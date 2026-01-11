@@ -99,7 +99,7 @@ export const MATCHES: Match[] = [
       "Messiah Hallberg & Sara Wimmercranz",
       "Kirsty Armstrong & Hanna Lublin Niklasson",
     ],
-    winner: null,
+    winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
     date: "16/23 januari",
