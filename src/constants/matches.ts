@@ -104,13 +104,19 @@ export const MATCHES: Match[] = [
   {
     date: "16/23 januari",
     matchType: "semifinal",
-    teams: ["Kirsty Armstrong & Hanna Lublin Niklasson", null],
-    winner: null,
+    teams: [
+      "Kirsty Armstrong & Hanna Lublin Niklasson",
+      "Ina Lundström & Hanna Hellquist",
+    ],
+    winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
     date: "30 januari",
     matchType: "final",
-    teams: null,
+    teams: [
+      "Kirsty Armstrong & Hanna Lublin Niklasson",
+      "Ina Lundström & Hanna Hellquist",
+    ],
     winner: null,
   },
 ];
