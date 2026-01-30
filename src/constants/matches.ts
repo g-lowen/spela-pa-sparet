@@ -117,7 +117,7 @@ export const MATCHES: Match[] = [
       "Kirsty Armstrong & Hanna Lublin Niklasson",
       "Ina Lundström & Hanna Hellquist",
     ],
-    winner: null,
+    winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
 ];
 
