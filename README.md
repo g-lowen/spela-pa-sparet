@@ -25,11 +25,6 @@ Type-checks the project and builds it for production into the `build` folder.
 
 Serves the contents of `build` locally, to check a production build before deploying.
 
-### `npm test`
-
-Runs the test suite (Vitest) in watch mode. Use `npm run test:run` for a single pass,
-`npm run test:ui` for the browser UI, and `npm run test:coverage` for a coverage report.
-
 ### `npm run lint` / `npm run lint:fix`
 
 Lints the project with ESLint.
@@ -41,7 +36,6 @@ Formats (or checks) source files with Prettier.
 ## Tooling
 
 - **Vite** for dev server and bundling
-- **Vitest** + **Testing Library** for tests
 - **MUI** (Material UI, including X Charts) for components and charts
 - **TypeScript**, **ESLint** and **Prettier**
 

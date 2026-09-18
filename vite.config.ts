@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
@@ -9,14 +9,5 @@ export default defineConfig({
   },
   build: {
     outDir: "build"
-  },
-  test: {
-    environment: "jsdom",
-    setupFiles: ["./src/setupTests.ts"],
-    css: true,
-    coverage: {
-      provider: "v8",
-      include: ["src/**/*.{ts,tsx}"]
-    }
   }
 });
