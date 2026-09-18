@@ -7,7 +7,6 @@ import {
   AppBar,
   Toolbar,
   Box,
-  Divider,
   IconButton,
   ListItemIcon,
   ListSubheader,
@@ -164,7 +163,6 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
             {season.label}
           </MenuItem>
         ))}
-        <Divider />
         <ListSubheader>Tema</ListSubheader>
         {THEME_MODES.map((themeMode) => (
           <MenuItem
