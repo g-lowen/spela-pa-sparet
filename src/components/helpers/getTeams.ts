@@ -1,4 +1,4 @@
-import { Gambler, Match, Team } from "../../types";
+import { Gambler, Match } from "../../types";
 
 export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   const { matchType, teams, winner } = match;
@@ -62,7 +62,7 @@ export function getTeams(match: Match, bet: Gambler["bets"][0]) {
   };
 }
 
-function getClassName(bet: Team | null, result: Team | null) {
+function getClassName(bet: string | null, result: string | null) {
   if (result === null || bet === null) {
     return bet === null ? "" : "guess";
   }
@@ -73,6 +73,6 @@ function getClassName(bet: Team | null, result: Team | null) {
   return "wrong";
 }
 
-function matchBetWithResult(bet: Team | null, result: Team | null) {
+function matchBetWithResult(bet: string | null, result: string | null) {
   return bet === result ? bet : null;
 }

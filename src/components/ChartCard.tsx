@@ -1,6 +1,5 @@
-import { MATCH_TYPE_TRANSLATION } from "../constants/matches";
-import { GAMBLERS } from "../constants/gamblers";
-import { Match } from "../types";
+import { MATCH_TYPE_TRANSLATION } from "../constants/matchTypes";
+import { Gambler, Match } from "../types";
 import {
   Card,
   CardProps as MuiCardProps,
@@ -17,6 +16,7 @@ import { useState } from "react";
 import { getPalette } from "./helpers/getPalette";
 import { HALLOWEEN_PALETTE } from "../constants/palette";
 import { isChristmas } from "./seasonal/functions/seasonal";
+import { useSeason } from "../season/useSeason";
 
 interface CardProps extends MuiCardProps {
   matchIndex?: number;
@@ -28,6 +28,7 @@ export const ChartCard = (props: CardProps) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const theme = useTheme();
   const isWinter = isChristmas();
+  const { season } = useSeason();
 
   if (!match || matchIndex === undefined) {
     return null;
@@ -41,9 +42,9 @@ export const ChartCard = (props: CardProps) => {
     setDialogOpen(true);
   };
 
-  const groupData = getGroupData(match, matchIndex);
-  const semifinalsData = getSemifinalsData();
-  const finalsData = getFinalsData();
+  const groupData = getGroupData(match, matchIndex, season.gamblers);
+  const semifinalsData = getSemifinalsData(season.gamblers);
+  const finalsData = getFinalsData(season.gamblers);
   const title =
     MATCH_TYPE_TRANSLATION[match.matchType] === "Gruppspel"
       ? `Avsnitt ${matchIndex + 1}`
@@ -121,7 +122,7 @@ export const ChartCard = (props: CardProps) => {
   );
 };
 
-function getGroupData(match: Match, matchIndex: number) {
+function getGroupData(match: Match, matchIndex: number, gamblers: Gambler[]) {
   const teams = match?.teams;
 
   if (match.matchType !== "group") {
@@ -134,8 +135,9 @@ function getGroupData(match: Match, matchIndex: number) {
   const firstClassBetters = [] as string[];
   const trolleyBetters = [] as string[];
 
-  GAMBLERS.forEach((gambler) => {
+  gamblers.forEach((gambler) => {
     const bet = gambler.bets[matchIndex];
+    if (!bet) return;
 
     if ("semifinalFirst" in bet && "semifinalSecond" in bet) return;
     if (bet.winner === teams?.[0]) {
@@ -178,8 +180,8 @@ function getGroupData(match: Match, matchIndex: number) {
   ];
 }
 
-function getSemifinalsData() {
-  const semifinalBets = GAMBLERS.map((gambler) => {
+function getSemifinalsData(gamblers: Gambler[]) {
+  const semifinalBets = gamblers.map((gambler) => {
     return {
       gamblerName: gambler.name,
       ...gambler.bets.find((bet) => bet.matchType === "semifinal"),
@@ -225,8 +227,8 @@ function getSemifinalsData() {
   });
 }
 
-function getFinalsData() {
-  const finalBets = GAMBLERS.map((gambler) => {
+function getFinalsData(gamblers: Gambler[]) {
+  const finalBets = gamblers.map((gambler) => {
     return {
       gamblerName: gambler.name,
       ...gambler.bets.find((bet) => bet.matchType === "final"),

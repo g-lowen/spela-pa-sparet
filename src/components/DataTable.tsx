@@ -7,14 +7,19 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { GAMBLERS } from "../constants/gamblers";
 import { createRowData } from "./helpers/create-row-data/createRowData";
 import { Row } from "./Row";
+import { useSeason } from "../season/useSeason";
 
 import { useMediaQuery } from "@mui/material";
 
 export default function DataTable() {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
+  const { season } = useSeason();
+
+  const rows = season.gamblers
+    .map((gambler) => createRowData(gambler, season.matches))
+    .sort((a, b) => b.points - a.points);
 
   return (
     <Paper
@@ -51,16 +56,12 @@ export default function DataTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows
-              .sort((a, b) => b.points - a.points)
-              .map((row) => (
-                <Row key={row.name} row={row} />
-              ))}
+            {rows.map((row) => (
+              <Row key={row.name} row={row} />
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
     </Paper>
   );
 }
-
-const rows = GAMBLERS.map((gambler) => createRowData(gambler));

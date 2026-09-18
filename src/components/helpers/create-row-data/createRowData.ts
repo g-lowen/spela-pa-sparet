@@ -1,10 +1,12 @@
-import { MATCHES } from "../../../constants/matches";
 import { Gambler, Match } from "../../../types";
 import { getTeams } from "./../getTeams";
 
-export function createRowData(gambler: Gambler) {
+export function createRowData(gambler: Gambler, matches: Match[]) {
   const { bets, name } = gambler;
-  const { losses, matchesPlayed, points, semifinals, wins } = getResults(bets);
+  const { losses, matchesPlayed, points, semifinals, wins } = getResults(
+    bets,
+    matches
+  );
 
   return {
     name,
@@ -12,7 +14,7 @@ export function createRowData(gambler: Gambler) {
     wins,
     losses,
     points,
-    betResults: MATCHES.map((match, index) => {
+    betResults: matches.map((match, index) => {
       const { date, matchType } = match;
       const bet = bets[index];
       const { firstClass, trolley } = getTeams(match, bet);
@@ -54,9 +56,9 @@ export function createRowData(gambler: Gambler) {
   };
 }
 
-function getResults(bets: Gambler["bets"]) {
+function getResults(bets: Gambler["bets"], matches: Match[]) {
   const results = bets.map((bet, index) => {
-    const match = MATCHES[index];
+    const match = matches[index];
     const multiplier = {
       final: 5,
       semifinal: 3,

@@ -1,6 +1,7 @@
-import { Gambler } from "../types";
+import { Gambler } from "../../../types";
+import { Season2025Team } from "./teams";
 
-export const GAMBLERS: Gambler[] = [
+export const GAMBLERS: Gambler<Season2025Team>[] = [
   {
     name: "Gustav",
     bets: [

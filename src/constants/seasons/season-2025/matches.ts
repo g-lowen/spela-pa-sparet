@@ -1,6 +1,7 @@
-import { Match } from "../types";
+import { Match } from "../../../types";
+import { Season2025Team } from "./teams";
 
-export const MATCHES: Match[] = [
+export const MATCHES: Match<Season2025Team>[] = [
   {
     date: "24 oktober",
     matchType: "group",
@@ -120,9 +121,3 @@ export const MATCHES: Match[] = [
     winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
 ];
-
-export const MATCH_TYPE_TRANSLATION = {
-  group: "Gruppspel",
-  semifinal: "Semifinaler",
-  final: "Final",
-} as const;

@@ -1,48 +1,40 @@
-export type Team2024 =
-  | "Ebba Kleberg von Sydow & Anders Tegnell"
-  | "Hector Apelgren & Peter Apelgren"
-  | "Hanna Dorsin & Emma Molin"
-  | "Gry Forssell & Jonas Rhodiner"
-  | "Messiah Hallberg & Sara Wimmercranz"
-  | "Anders Eldeman & Christoffer Nyqvist"
-  | "Jennifer Kücükaslan & Johan Kücükaslan"
-  | "Farah Abadi & Johan Glans";
+export type MatchType = "group" | "semifinal" | "final";
 
-export type Team =
-  | "Anders Eldeman & Christoffer Nyqvist"
-  | "Ina Lundström & Hanna Hellquist"
-  | "Jonas Dahlquist & Marie Lehmann"
-  | "Marianne Ahrne & Anders Ankan Johansson"
-  | "Julia Frändfors & Oisín Cantwell"
-  | "Tarik Saleh & Ika Johannesson"
-  | "Johanna Wagrell & Johan Hurtig"
-  | "Sofia Dalén & Kalle Möller"
-  | "Amie Bramme Sey & Gunnar Bolin"
-  | "Kirsty Armstrong & Hanna Lublin Niklasson"
-  | "Uje Brandelius & Amy Deasismont"
-  | "Messiah Hallberg & Sara Wimmercranz";
-
-export interface Match {
+/**
+ * Match and Gambler are generic over the season's team union, so each season's
+ * data file gets typo protection against its own line-up while the app can work
+ * with the loose `string` form. A `Match<Season2025Team>` is assignable to a
+ * `Match<string>`, since the team parameter only ever appears in output
+ * positions.
+ */
+export interface Match<TTeam extends string = string> {
   date: string;
   matchType: MatchType;
-  teams: [Team, Team] | [Team, null] | null;
-  winner: Team | null;
+  teams: [TTeam, TTeam] | [TTeam, null] | null;
+  winner: TTeam | null;
 }
 
-export interface Gambler {
-  name: string;
-  bets: Bet[];
-}
-
-type Bet =
+export type Bet<TTeam extends string = string> =
   | {
       matchType: Exclude<MatchType, "semifinal">;
-      winner: Team;
+      winner: TTeam;
     }
   | {
       matchType: Extract<MatchType, "semifinal">;
-      semifinalFirst: Team;
-      semifinalSecond: Team;
+      semifinalFirst: TTeam;
+      semifinalSecond: TTeam;
     };
 
-type MatchType = "group" | "semifinal" | "final";
+export interface Gambler<TTeam extends string = string> {
+  name: string;
+  bets: Bet<TTeam>[];
+}
+
+export interface Season {
+  /** Stable key used for the selector value and for persistence. */
+  id: string;
+  /** What the selector shows, e.g. "2025/2026". */
+  label: string;
+  matches: Match[];
+  gamblers: Gambler[];
+}

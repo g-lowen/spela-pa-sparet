@@ -5,10 +5,14 @@ import {
   Tab,
   AppBar,
   Toolbar,
+  MenuItem,
+  Select,
   useTheme,
 } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
 import { isChristmas } from "./seasonal/functions/seasonal";
+import { SEASONS } from "../constants/seasons";
+import { useSeason } from "../season/useSeason";
 
 interface HeaderProps {
   onChange: (_event: React.SyntheticEvent, newValue: number) => void;
@@ -19,6 +23,7 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
   const { mode, setMode } = useColorScheme();
   const theme = useTheme();
   const isWinter = isChristmas();
+  const { seasonId, setSeasonId } = useSeason();
 
   return (
     <AppBar
@@ -59,6 +64,19 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
           <Tab label="Diagram" {...a11yProps(0)} />
           <Tab label="Tabell" {...a11yProps(1)} />
         </Tabs>
+        <Select
+          size="small"
+          value={seasonId}
+          onChange={(event) => setSeasonId(event.target.value)}
+          inputProps={{ "aria-label": "Välj säsong" }}
+          sx={{ marginX: "8px" }}
+        >
+          {SEASONS.map((season) => (
+            <MenuItem key={season.id} value={season.id}>
+              {season.label}
+            </MenuItem>
+          ))}
+        </Select>
         <ToggleButtonGroup
           size="medium"
           exclusive
