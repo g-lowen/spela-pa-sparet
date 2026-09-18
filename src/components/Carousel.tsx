@@ -17,7 +17,7 @@ export const Carousel = ({
   };
 
   return (
-    <Stack spacing={2} alignItems="center">
+    <Stack spacing={2} sx={{ alignItems: "center" }}>
       {matches.map(
         (match, index) =>
           index + 1 === currentIndex && (
@@ -26,7 +26,7 @@ export const Carousel = ({
               match={match}
               matchIndex={index + groupStartIndex}
             />
-          )
+          ),
       )}
       <Pagination
         color="primary"

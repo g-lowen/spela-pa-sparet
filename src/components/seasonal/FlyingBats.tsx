@@ -3,28 +3,42 @@ import { BatIcon } from "../../svgs/BatIcon";
 
 const BAT_COUNT = 2;
 
+type BatParams = {
+  speed1: number;
+  speed2: number;
+  xAmplitude1: number;
+  xAmplitude2: number;
+  yAmplitude1: number;
+  yAmplitude2: number;
+  xCenter: number;
+  yCenter: number;
+  phase1: number;
+  phase2: number;
+  direction: number;
+};
+
+// Random movement parameters for a single bat. Generated on mount rather than
+// during render, since Math.random and window dimensions are not pure.
+const createBatParams = (): BatParams => ({
+  speed1: 30 + Math.random() * 40,
+  speed2: 20 + Math.random() * 30,
+  xAmplitude1: Math.random() * (window.innerWidth / 3) + window.innerWidth / 6,
+  xAmplitude2: Math.random() * (window.innerWidth / 6),
+  yAmplitude1:
+    Math.random() * (window.innerHeight / 3) + window.innerHeight / 6,
+  yAmplitude2: Math.random() * (window.innerHeight / 6),
+  xCenter: Math.random() * window.innerWidth,
+  yCenter: Math.random() * window.innerHeight,
+  phase1: Math.random() * Math.PI * 2,
+  phase2: Math.random() * Math.PI * 2,
+  direction: Math.random() > 0.5 ? 1 : -1,
+});
+
 export const FlyingBats = () => {
   const batRefs = useRef<(HTMLDivElement | null)[]>([]);
-  // Store random movement parameters for each bat
-  const paramsRef = useRef(
-    Array.from({ length: BAT_COUNT }).map(() => ({
-      speed1: 30 + Math.random() * 40,
-      speed2: 20 + Math.random() * 30,
-      xAmplitude1:
-        Math.random() * (window.innerWidth / 3) + window.innerWidth / 6,
-      xAmplitude2: Math.random() * (window.innerWidth / 6),
-      yAmplitude1:
-        Math.random() * (window.innerHeight / 3) + window.innerHeight / 6,
-      yAmplitude2: Math.random() * (window.innerHeight / 6),
-      xCenter: Math.random() * window.innerWidth,
-      yCenter: Math.random() * window.innerHeight,
-      phase1: Math.random() * Math.PI * 2,
-      phase2: Math.random() * Math.PI * 2,
-      direction: Math.random() > 0.5 ? 1 : -1,
-    }))
-  );
 
   useEffect(() => {
+    const params = Array.from({ length: BAT_COUNT }, createBatParams);
     let running = true;
     const start = performance.now();
     const animate = () => {
@@ -32,7 +46,7 @@ export const FlyingBats = () => {
       const t = (now - start) / 1000;
       batRefs.current.forEach((bat, i) => {
         if (!bat) return;
-        const p = paramsRef.current[i];
+        const p = params[i];
         // Chaotic, fluttery movement
         const x =
           p.xCenter +

@@ -1,21 +1,55 @@
 # Spela På Spåret
 
-## Available Scripts
+A small React app for tracking bets on the Swedish TV show *På Spåret*.
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+Node 24 (see [`.nvmrc`](.nvmrc)). With nvm:
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+nvm use
+npm install
+```
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+## Available scripts
 
-### `npm test`
+### `npm start` / `npm run dev`
 
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode on [http://localhost:3000](http://localhost:3000) with hot module replacement.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.
+Type-checks the project and builds it for production into the `build` folder.
 
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+### `npm run preview`
+
+Serves the contents of `build` locally, to check a production build before deploying.
+
+### `npm test`
+
+Runs the test suite (Vitest) in watch mode. Use `npm run test:run` for a single pass,
+`npm run test:ui` for the browser UI, and `npm run test:coverage` for a coverage report.
+
+### `npm run lint` / `npm run lint:fix`
+
+Lints the project with ESLint.
+
+### `npm run format` / `npm run format:check`
+
+Formats (or checks) source files with Prettier.
+
+## Tooling
+
+- **Vite** for dev server and bundling
+- **Vitest** + **Testing Library** for tests
+- **MUI** (Material UI, including X Charts) for components and charts
+- **TypeScript**, **ESLint** and **Prettier**
+
+## Importing bets from CSV
+
+`scripts/parse-csv.js` converts an exported form response CSV into the `Gambler[]`
+structure used by the app:
+
+```sh
+node scripts/parse-csv.js <input.csv> src/constants/gamblers.ts
+```

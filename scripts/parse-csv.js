@@ -1,8 +1,8 @@
 // Script to read a CSV file and output formatted JSON
 // Usage: node scripts/parse-csv.js <input.csv> <output.json>
 
-const fs = require('fs');
-const csv = require('csv-parse/sync');
+import fs from 'node:fs';
+import { parse } from 'csv-parse/sync';
 
 if (process.argv.length < 4) {
   console.error('Usage: node scripts/parse-csv.js <input.csv> <output.json>');
@@ -14,7 +14,7 @@ const outputPath = process.argv[3];
 
 try {
   const csvContent = fs.readFileSync(inputPath, 'utf8');
-  const records = csv.parse(csvContent, {
+  const records = parse(csvContent, {
     columns: true,
     skip_empty_lines: true
   });

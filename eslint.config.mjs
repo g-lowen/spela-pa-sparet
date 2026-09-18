@@ -1,29 +1,29 @@
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import prettier from "eslint-config-prettier";
 
-const recommendedConfig = [...tseslint.configs.recommended];
-
-recommendedConfig.push({
-  rules: {
-    "no-unused-vars": "error",
-    "no-explicit-any": "warn",
-    "non-nullable-assertion-type": "error"
-  }
-});
-
-recommendedConfig.push({
-  rules: {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  }
-});
-
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
-  ...recommendedConfig,
-  prettier,
-  pluginReact.configs.flat.recommended
+  {
+    ignores: ["build/**", "coverage/**", "node_modules/**"]
+  },
+  ...tseslint.configs.recommended,
+  reactHooks.configs.flat["recommended-latest"],
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      globals: globals.browser
+    },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-non-null-assertion": "warn"
+    }
+  },
+  {
+    files: ["scripts/**/*.js"],
+    languageOptions: {
+      globals: globals.node
+    }
+  },
+  prettier
 ];

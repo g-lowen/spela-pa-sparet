@@ -131,8 +131,8 @@ function getGroupData(match: Match, matchIndex: number) {
     return null;
   }
 
-  let firstClassBetters = [] as string[];
-  let trolleyBetters = [] as string[];
+  const firstClassBetters = [] as string[];
+  const trolleyBetters = [] as string[];
 
   GAMBLERS.forEach((gambler) => {
     const bet = gambler.bets[matchIndex];
