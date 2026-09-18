@@ -21,7 +21,6 @@ import { useColorScheme } from "@mui/material/styles";
 import { isChristmas } from "./seasonal/functions/seasonal";
 import { SEASONS } from "../constants/seasons";
 import { useSeason } from "../season/useSeason";
-import SettingsIcon from "../svgs/SettingsIcon";
 
 type ThemeMode = "light" | "dark" | "system";
 
@@ -117,8 +116,9 @@ export const Header = ({ onChange, tabValue }: HeaderProps) => {
               aria-haspopup="true"
               aria-expanded={menuAnchor !== null}
               onClick={(event) => setMenuAnchor(event.currentTarget)}
+              sx={{ fontSize: "1.25rem" }}
             >
-              <SettingsIcon />
+              ⚙️
             </IconButton>
           ) : (
             <ToggleButtonGroup
