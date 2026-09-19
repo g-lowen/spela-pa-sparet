@@ -81,7 +81,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     date: "6 november",
     matchType: "group",
     teams: [
-      "Assia Dahir & Kalle Berg",
+      "Tina Thörner & Kalle Berg",
       "Kirsty Armstrong & Hanna Lublin Niklasson",
     ],
     winner: null,
@@ -92,7 +92,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     matchType: "group",
     teams: [
       "Andrew Walden & Kristoffer ”K” Svensson",
-      "Assia Dahir & Kalle Berg",
+      "Tina Thörner & Kalle Berg",
     ],
     winner: null,
   },

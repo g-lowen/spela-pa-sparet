@@ -221,11 +221,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Assia Dahir & Kalle Berg",
+        winner: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "group",
-        winner: "Assia Dahir & Kalle Berg",
+        winner: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "group",
@@ -242,7 +242,7 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       {
         matchType: "semifinal",
         semifinalFirst: "Bengt Skött & Ayan Jamal",
-        semifinalSecond: "Assia Dahir & Kalle Berg",
+        semifinalSecond: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "final",
@@ -287,7 +287,7 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Assia Dahir & Kalle Berg",
+        winner: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "group",
@@ -345,11 +345,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Assia Dahir & Kalle Berg",
+        winner: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "group",
-        winner: "Assia Dahir & Kalle Berg",
+        winner: "Tina Thörner & Kalle Berg",
       },
       {
         matchType: "group",

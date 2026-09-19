@@ -14,7 +14,7 @@ export type Season2026Team =
   // Group 3
   | "Kirsty Armstrong & Hanna Lublin Niklasson"
   | "Andrew Walden & Kristoffer ”K” Svensson"
-  | "Assia Dahir & Kalle Berg"
+  | "Tina Thörner & Kalle Berg"
   // Group 4
   | "Amy Deasismont & Uje Brandelius"
   | "Jakob Norrgård & Axel Åhman"
