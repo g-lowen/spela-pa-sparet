@@ -19,7 +19,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     date: "18 september",
     matchType: "group",
     teams: ["Gry Forssell & Jonas Rhodiner", "Lotta Lundgren & Erik Haag"],
-    winner: null,
+    winner: "Lotta Lundgren & Erik Haag",
   },
   {
     // GUESS: Bengt & Ayan are confirmed, their opponent is last week's loser.
