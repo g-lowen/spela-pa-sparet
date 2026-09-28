@@ -11,11 +11,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Gry Forssell & Jonas Rhodiner",
       },
       {
         matchType: "group",
-        winner: "Gry Forssell & Jonas Rhodiner",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",
@@ -73,11 +73,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Gry Forssell & Jonas Rhodiner",
       },
       {
         matchType: "group",
-        winner: "Gry Forssell & Jonas Rhodiner",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",
@@ -135,11 +135,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Gry Forssell & Jonas Rhodiner",
       },
       {
         matchType: "group",
-        winner: "Gry Forssell & Jonas Rhodiner",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",
@@ -321,11 +321,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Bengt Skött & Ayan Jamal",
       },
       {
         matchType: "group",
-        winner: "Bengt Skött & Ayan Jamal",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",
@@ -383,11 +383,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Gry Forssell & Jonas Rhodiner",
       },
       {
         matchType: "group",
-        winner: "Gry Forssell & Jonas Rhodiner",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",
@@ -445,11 +445,11 @@ export const GAMBLERS: Gambler<Season2026Team>[] = [
       },
       {
         matchType: "group",
-        winner: "Lotta Lundgren & Erik Haag",
+        winner: "Gry Forssell & Jonas Rhodiner",
       },
       {
         matchType: "group",
-        winner: "Gry Forssell & Jonas Rhodiner",
+        winner: "Lotta Lundgren & Erik Haag",
       },
       {
         matchType: "group",

@@ -25,14 +25,14 @@ export const MATCHES: Match<Season2026Team>[] = [
     // GUESS: Bengt & Ayan are confirmed, their opponent is last week's loser.
     date: "25 september",
     matchType: "group",
-    teams: ["Lotta Lundgren & Erik Haag", "Bengt Skött & Ayan Jamal"],
-    winner: null,
+    teams: ["Bengt Skött & Ayan Jamal", "Gry Forssell & Jonas Rhodiner"],
+    winner: "Bengt Skött & Ayan Jamal",
   },
   {
     // GUESS
     date: "2 oktober",
     matchType: "group",
-    teams: ["Bengt Skött & Ayan Jamal", "Gry Forssell & Jonas Rhodiner"],
+    teams: ["Lotta Lundgren & Erik Haag", "Bengt Skött & Ayan Jamal"],
     winner: null,
   },
   // Group 2
