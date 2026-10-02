@@ -18,29 +18,83 @@ const NAME_COLUMN = "Ditt namn";
 // In episode order. The two semifinal answers collapse into a single bet, the
 // way the Match list models them.
 const QUESTIONS = [
-  { key: "Grupp 1 #1 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 1 #2 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 1 #3 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 2 #1 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 2 #2 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 2 #3 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 3 #1 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 3 #2 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 3 #3 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 4 #1 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 4 #2 - Vilka vinner matchen?", matchType: "group" },
-  { key: "Grupp 4 #3 - Vilka vinner matchen?", matchType: "group" },
+  {
+    key: "Grupp 1 #1 - Vilka vinner matchen?",
+    matchId: "grupp-1-1",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 1 #2 - Vilka vinner matchen?",
+    matchId: "grupp-1-2",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 1 #3 - Vilka vinner matchen?",
+    matchId: "grupp-1-3",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 2 #1 - Vilka vinner matchen?",
+    matchId: "grupp-2-1",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 2 #2 - Vilka vinner matchen?",
+    matchId: "grupp-2-2",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 2 #3 - Vilka vinner matchen?",
+    matchId: "grupp-2-3",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 3 #1 - Vilka vinner matchen?",
+    matchId: "grupp-3-1",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 3 #2 - Vilka vinner matchen?",
+    matchId: "grupp-3-2",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 3 #3 - Vilka vinner matchen?",
+    matchId: "grupp-3-3",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 4 #1 - Vilka vinner matchen?",
+    matchId: "grupp-4-1",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 4 #2 - Vilka vinner matchen?",
+    matchId: "grupp-4-2",
+    matchType: "group",
+  },
+  {
+    key: "Grupp 4 #3 - Vilka vinner matchen?",
+    matchId: "grupp-4-3",
+    matchType: "group",
+  },
   {
     key: "Semifinal 1* - Vilka vinner matchen?",
+    matchId: "semifinal",
     matchType: "semifinal",
     semifinal: "first",
   },
   {
     key: "Semifinal 2* - Vilka vinner matchen?",
+    matchId: "semifinal",
     matchType: "semifinal",
     semifinal: "second",
   },
-  { key: "Final - Vilka vinner matchen?", matchType: "final" },
+  {
+    key: "Final - Vilka vinner matchen?",
+    matchId: "final",
+    matchType: "final",
+  },
 ];
 
 const fail = (message) => {
@@ -124,17 +178,30 @@ const gamblers = records.map((row, rowIndex) => {
     }
 
     if (question.matchType === "group") {
-      bets.push({ matchType: "group", winner: value });
+      bets.push({
+        matchId: question.matchId,
+        matchType: "group",
+        winner: value,
+      });
     } else if (question.matchType === "semifinal") {
       if (question.semifinal === "first") semifinalFirst = value;
       else semifinalSecond = value;
     } else {
       if (semifinalFirst && semifinalSecond) {
-        bets.push({ matchType: "semifinal", semifinalFirst, semifinalSecond });
+        bets.push({
+          matchId: "semifinal",
+          matchType: "semifinal",
+          semifinalFirst,
+          semifinalSecond,
+        });
         semifinalFirst = null;
         semifinalSecond = null;
       }
-      bets.push({ matchType: "final", winner: value });
+      bets.push({
+        matchId: question.matchId,
+        matchType: "final",
+        winner: value,
+      });
     }
   }
 

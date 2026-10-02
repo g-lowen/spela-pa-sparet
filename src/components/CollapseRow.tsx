@@ -49,36 +49,23 @@ export const CollapseRow = ({
         <TableCell>{MATCH_TYPE_TRANSLATION[betResult.matchType]}</TableCell>
       </>
     ) : null}
-    {index < 12 ? (
-      <StyledTableCell className={betResult.firstClass?.className}>
+    {betResult.matchType === "final" ? (
+      <StyledTableCell
+        className={betResult.firstClass?.className}
+        colSpan={2}
+        sx={{ textAlign: "center" }}
+      >
         {betResult.firstClass?.team}
       </StyledTableCell>
     ) : (
       <>
-        {betResult.matchType === "semifinal" ? (
-          <>
-            <StyledTableCell className={betResult.firstClass?.className}>
-              {betResult.firstClass?.team}
-            </StyledTableCell>
-            <StyledTableCell className={betResult.trolley?.className}>
-              {betResult.trolley?.team}
-            </StyledTableCell>
-          </>
-        ) : (
-          <StyledTableCell
-            className={betResult.firstClass?.className}
-            colSpan={2}
-            sx={{ textAlign: "center" }}
-          >
-            {betResult.firstClass?.team}
-          </StyledTableCell>
-        )}
+        <StyledTableCell className={betResult.firstClass?.className}>
+          {betResult.firstClass?.team}
+        </StyledTableCell>
+        <StyledTableCell className={betResult.trolley?.className}>
+          {betResult.trolley?.team}
+        </StyledTableCell>
       </>
     )}
-    {index < 12 ? (
-      <StyledTableCell className={betResult.trolley?.className}>
-        {betResult.trolley?.team}
-      </StyledTableCell>
-    ) : null}
   </StyledTableRow>
 );

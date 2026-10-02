@@ -1,12 +1,16 @@
 import { Gambler, Match } from "../../../types";
 import { getTeams } from "./../getTeams";
 
+const betsByMatchId = (bets: Gambler["bets"]) =>
+  new Map(bets.map((bet) => [bet.matchId, bet]));
+
 export function createRowData(gambler: Gambler, matches: Match[]) {
   const { bets, name } = gambler;
   const { losses, matchesPlayed, points, semifinals, wins } = getResults(
     bets,
     matches
   );
+  const byMatchId = betsByMatchId(bets);
 
   return {
     name,
@@ -14,9 +18,19 @@ export function createRowData(gambler: Gambler, matches: Match[]) {
     wins,
     losses,
     points,
-    betResults: matches.map((match, index) => {
+    betResults: matches.map((match) => {
       const { date, matchType } = match;
-      const bet = bets[index];
+      const bet = byMatchId.get(match.id);
+
+      if (!bet) {
+        return {
+          date,
+          firstClass: { team: undefined, className: "" },
+          trolley: null,
+          matchType,
+        };
+      }
+
       const { firstClass, trolley } = getTeams(match, bet);
 
       if (matchType === "semifinal") {
@@ -57,13 +71,20 @@ export function createRowData(gambler: Gambler, matches: Match[]) {
 }
 
 function getResults(bets: Gambler["bets"], matches: Match[]) {
-  const results = bets.map((bet, index) => {
-    const match = matches[index];
+  const byMatchId = betsByMatchId(bets);
+
+  const results = matches.map((match) => {
+    const bet = byMatchId.get(match.id);
+    if (!bet) {
+      return null;
+    }
+
     const multiplier = {
       final: 5,
       semifinal: 3,
       group: 1,
     }[match.matchType];
+
     if (bet.matchType === "semifinal") {
       if (match.teams === null) return [null, null];
 
@@ -100,7 +121,17 @@ function getResults(bets: Gambler["bets"], matches: Match[]) {
   const losses = flatResults.filter((result) => result === 0).length;
   const points = flatResults.reduce((sum, result) => sum + result, 0);
 
-  return { losses, matchesPlayed, points, semifinals: results[12], wins };
+  const semifinalIndex = matches.findIndex(
+    (match) => match.matchType === "semifinal"
+  );
+
+  return {
+    losses,
+    matchesPlayed,
+    points,
+    semifinals: semifinalIndex === -1 ? undefined : results[semifinalIndex],
+    wins,
+  };
 }
 
 const getSemiFinalResults = (

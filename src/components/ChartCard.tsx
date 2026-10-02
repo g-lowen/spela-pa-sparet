@@ -42,7 +42,7 @@ export const ChartCard = (props: CardProps) => {
     setDialogOpen(true);
   };
 
-  const groupData = getGroupData(match, matchIndex, season.gamblers);
+  const groupData = getGroupData(match, season.gamblers);
   const semifinalsData = getSemifinalsData(season.gamblers);
   const finalsData = getFinalsData(season.gamblers);
   const title =
@@ -122,7 +122,7 @@ export const ChartCard = (props: CardProps) => {
   );
 };
 
-function getGroupData(match: Match, matchIndex: number, gamblers: Gambler[]) {
+function getGroupData(match: Match, gamblers: Gambler[]) {
   const teams = match?.teams;
 
   if (match.matchType !== "group") {
@@ -136,7 +136,7 @@ function getGroupData(match: Match, matchIndex: number, gamblers: Gambler[]) {
   const trolleyBetters = [] as string[];
 
   gamblers.forEach((gambler) => {
-    const bet = gambler.bets[matchIndex];
+    const bet = gambler.bets.find((b) => b.matchId === match.id);
     if (!bet) return;
 
     if ("semifinalFirst" in bet && "semifinalSecond" in bet) return;

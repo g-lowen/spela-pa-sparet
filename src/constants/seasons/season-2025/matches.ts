@@ -3,6 +3,7 @@ import { Season2025Team } from "./teams";
 
 export const MATCHES: Match<Season2025Team>[] = [
   {
+    id: "grupp-1-1",
     date: "24 oktober",
     matchType: "group",
     teams: [
@@ -12,6 +13,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Ina Lundström & Hanna Hellquist",
   },
   {
+    id: "grupp-1-2",
     date: "31 oktober",
     matchType: "group",
     teams: [
@@ -21,6 +23,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Anders Eldeman & Christoffer Nyqvist",
   },
   {
+    id: "grupp-1-3",
     date: "7 november",
     matchType: "group",
     teams: [
@@ -30,6 +33,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Jonas Dahlquist & Marie Lehmann",
   },
   {
+    id: "grupp-2-1",
     date: "14 november",
     matchType: "group",
     teams: [
@@ -39,6 +43,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Julia Frändfors & Oisín Cantwell",
   },
   {
+    id: "grupp-2-2",
     date: "21 november",
     matchType: "group",
     teams: [
@@ -49,6 +54,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Marianne Ahrne & Anders Ankan Johansson",
   },
   {
+    id: "grupp-2-3",
     date: "28 november",
     matchType: "group",
     teams: [
@@ -58,24 +64,28 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Tarik Saleh & Ika Johannesson",
   },
   {
+    id: "grupp-3-1",
     date: "5 december",
     matchType: "group",
     teams: ["Johanna Wagrell & Johan Hurtig", "Sofia Dalén & Kalle Möller"],
     winner: "Johanna Wagrell & Johan Hurtig",
   },
   {
+    id: "grupp-3-2",
     date: "12 december",
     matchType: "group",
     teams: ["Amie Bramme Sey & Gunnar Bolin", "Sofia Dalén & Kalle Möller"],
     winner: "Amie Bramme Sey & Gunnar Bolin",
   },
   {
+    id: "grupp-3-3",
     date: "19 december",
     matchType: "group",
     teams: ["Amie Bramme Sey & Gunnar Bolin", "Johanna Wagrell & Johan Hurtig"],
     winner: "Amie Bramme Sey & Gunnar Bolin",
   },
   {
+    id: "grupp-4-1",
     date: "26 december",
     matchType: "group",
     teams: [
@@ -85,6 +95,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
+    id: "grupp-4-2",
     date: "2 januari",
     matchType: "group",
     teams: [
@@ -94,6 +105,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Uje Brandelius & Amy Deasismont",
   },
   {
+    id: "grupp-4-3",
     date: "9 januari",
     matchType: "group",
     teams: [
@@ -103,6 +115,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
+    id: "semifinal",
     date: "16/23 januari",
     matchType: "semifinal",
     teams: [
@@ -112,6 +125,7 @@ export const MATCHES: Match<Season2025Team>[] = [
     winner: "Kirsty Armstrong & Hanna Lublin Niklasson",
   },
   {
+    id: "final",
     date: "30 januari",
     matchType: "final",
     teams: [

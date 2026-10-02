@@ -16,12 +16,14 @@ import { Season2026Team } from "./teams";
 export const MATCHES: Match<Season2026Team>[] = [
   // Group 1
   {
+    id: "grupp-1-1",
     date: "18 september",
     matchType: "group",
     teams: ["Gry Forssell & Jonas Rhodiner", "Lotta Lundgren & Erik Haag"],
     winner: "Lotta Lundgren & Erik Haag",
   },
   {
+    id: "grupp-1-2",
     // GUESS: Bengt & Ayan are confirmed, their opponent is last week's loser.
     date: "25 september",
     matchType: "group",
@@ -29,6 +31,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: "Bengt Skött & Ayan Jamal",
   },
   {
+    id: "grupp-1-3",
     // GUESS
     date: "2 oktober",
     matchType: "group",
@@ -37,6 +40,7 @@ export const MATCHES: Match<Season2026Team>[] = [
   },
   // Group 2
   {
+    id: "grupp-2-1",
     date: "9 oktober",
     matchType: "group",
     teams: [
@@ -46,6 +50,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-2-2",
     // GUESS: Malin & Ola are confirmed, their opponent is last week's loser.
     date: "16 oktober",
     matchType: "group",
@@ -56,6 +61,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-2-3",
     // GUESS
     date: "23 oktober",
     matchType: "group",
@@ -67,6 +73,7 @@ export const MATCHES: Match<Season2026Team>[] = [
   },
   // Group 3
   {
+    id: "grupp-3-1",
     // GUESS: which two of the three open the group has not been announced.
     date: "30 oktober",
     matchType: "group",
@@ -77,6 +84,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-3-2",
     // GUESS
     date: "6 november",
     matchType: "group",
@@ -87,6 +95,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-3-3",
     // GUESS
     date: "13 november",
     matchType: "group",
@@ -98,6 +107,7 @@ export const MATCHES: Match<Season2026Team>[] = [
   },
   // Group 4
   {
+    id: "grupp-4-1",
     // GUESS: which two of the three open the group has not been announced.
     date: "20 november",
     matchType: "group",
@@ -105,6 +115,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-4-2",
     // GUESS
     date: "27 november",
     matchType: "group",
@@ -115,6 +126,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     winner: null,
   },
   {
+    id: "grupp-4-3",
     // GUESS
     date: "4 december",
     matchType: "group",
@@ -123,12 +135,14 @@ export const MATCHES: Match<Season2026Team>[] = [
   },
   // Slutspel
   {
+    id: "semifinal",
     date: "11/18 december",
     matchType: "semifinal",
     teams: null,
     winner: null,
   },
   {
+    id: "final",
     date: "25 december",
     matchType: "final",
     teams: null,
