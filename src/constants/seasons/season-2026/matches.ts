@@ -36,7 +36,7 @@ export const MATCHES: Match<Season2026Team>[] = [
     date: "2 oktober",
     matchType: "group",
     teams: ["Lotta Lundgren & Erik Haag", "Bengt Skött & Ayan Jamal"],
-    winner: null,
+    winner: "Lotta Lundgren & Erik Haag",
   },
   // Group 2
   {
